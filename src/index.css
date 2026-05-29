@@ -1,0 +1,307 @@
+:root {
+  --bg-1: #fff1f7;
+  --bg-2: #eaf6ff;
+  --bg-3: #fff8e6;
+  --card: #ffffff;
+  --ink: #2a2240;
+  --ink-soft: #6b6480;
+  --pink: #ff5fa2;
+  --pink-deep: #e23c84;
+  --mint: #54c8a8;
+  --sky: #5ab4f0;
+  --sun: #ffc94d;
+  --sale: #ff4d6d;
+  --shadow: 0 12px 30px rgba(120, 80, 140, 0.16);
+  --shadow-sm: 0 4px 14px rgba(120, 80, 140, 0.12);
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, var(--bg-1), transparent),
+    radial-gradient(1000px 600px at 100% 0%, var(--bg-2), transparent),
+    linear-gradient(180deg, var(--bg-3), #ffffff 60%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Baloo 2', 'Nunito', sans-serif;
+  margin: 0;
+  line-height: 1.1;
+}
+
+a { color: var(--pink-deep); }
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+/* ---------- Header ---------- */
+.hero {
+  text-align: center;
+  padding: 18px 0 8px;
+}
+.hero .logo {
+  font-size: 64px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 10px rgba(226, 60, 132, 0.25));
+  animation: bob 3s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+.hero h1 {
+  font-size: clamp(34px, 6vw, 56px);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--pink-deep), var(--sun), var(--mint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 6px;
+}
+.hero p.tag {
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin: 8px 0 0;
+  font-size: 17px;
+}
+
+/* ---------- Status banner ---------- */
+.banner {
+  margin: 22px 0;
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow);
+  color: #fff;
+}
+.banner.on {
+  background: linear-gradient(120deg, #ff5fa2, #ff8a5b);
+}
+.banner.off {
+  background: linear-gradient(120deg, #8ea2c9, #aab6d6);
+}
+.banner .big {
+  font-size: 44px;
+  line-height: 1;
+}
+.banner h2 {
+  font-size: clamp(20px, 3.4vw, 28px);
+  font-weight: 800;
+}
+.banner .sub {
+  opacity: 0.95;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ---------- Meta row ---------- */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 2px 20px;
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 14px;
+}
+.meta select {
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid #ffd6e7;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+.pill-sample {
+  background: #fff3cd;
+  color: #8a6d00;
+  border: 1px dashed #e0b400;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+/* ---------- Brand sections ---------- */
+.brand {
+  margin: 26px 0;
+}
+.brand-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.brand-head .emoji {
+  font-size: 30px;
+}
+.brand-head h2 {
+  font-size: 24px;
+}
+.brand-head .count {
+  margin-left: auto;
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+  background: var(--mint);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.brand-head .count.zero { background: #c3bdd0; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  position: relative;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid #f3eef8;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card.sale {
+  border-color: #ffd0d9;
+  box-shadow: 0 8px 22px rgba(255, 77, 109, 0.22);
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+.card .name {
+  font-weight: 800;
+  font-size: 15.5px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  min-height: 38px;
+}
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.price {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+}
+.card.sale .price { color: var(--sale); }
+.was {
+  text-decoration: line-through;
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 14px;
+}
+.deal-text {
+  margin-top: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--pink-deep);
+}
+.valid {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.badge-sale {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  background: var(--sale);
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(255, 77, 109, 0.4);
+  transform: rotate(6deg);
+}
+.empty {
+  color: var(--ink-soft);
+  font-weight: 700;
+  background: #fff;
+  border: 2px dashed #e7e0f0;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+}
+
+/* ---------- Alert signup ---------- */
+.signup {
+  margin-top: 36px;
+  background: linear-gradient(120deg, #fffaf0, #fff0f6);
+  border: 2px solid #ffe0ec;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+}
+.signup h2 { font-size: 24px; }
+.signup p { color: var(--ink-soft); font-weight: 600; margin: 6px 0 16px; }
+.signup form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.signup input[type='email'] {
+  flex: 1 1 240px;
+  font: inherit;
+  font-weight: 700;
+  padding: 13px 16px;
+  border-radius: 999px;
+  border: 2px solid #ffd0e2;
+  outline: none;
+}
+.signup input[type='email']:focus { border-color: var(--pink); }
+.btn {
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 22px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--pink), var(--pink-deep));
+  box-shadow: 0 8px 18px rgba(226, 60, 132, 0.35);
+  transition: transform 0.12s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+.note {
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.ok-msg {
+  margin-top: 12px;
+  font-weight: 800;
+  color: var(--mint);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}

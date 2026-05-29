@@ -1,0 +1,41 @@
+{
+  "_note": "Real snapshot of Safeway's Mill Valley (94941) weekly ad pulled from Flipp on 2026-05-29. Re-run `npm run scrape` to refresh.",
+  "isSample": false,
+  "checkedAt": "2026-05-29T13:30:00.000Z",
+  "stores": [
+    {
+      "id": "camino-alto",
+      "name": "Safeway — Camino Alto (Mill Valley)",
+      "address": "1 Camino Alto, Mill Valley, CA 94941",
+      "deals": [
+        {
+          "id": "flyer-haagen-dazs-gelato",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Gelato 14-oz. 4-ct.",
+          "price": 5.99,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-06-02"
+        }
+      ]
+    },
+    {
+      "id": "strawberry",
+      "name": "Safeway — Strawberry Village (Mill Valley)",
+      "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
+      "deals": [
+        {
+          "id": "flyer-haagen-dazs-gelato",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Gelato 14-oz. 4-ct.",
+          "price": 5.99,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-06-02"
+        }
+      ]
+    }
+  ]
+}
