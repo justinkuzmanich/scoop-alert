@@ -4,8 +4,10 @@ name: Refresh deals (daily)
 # public/data/deals.json. Pushing to main re-triggers deploy.yml, so the live
 # site always reflects the latest scrape.
 #
-# Email alerts are intentionally NOT wired here yet (see CLAUDE.md TODO #2):
-# without RESEND_API_KEY, scraper/notify.js falls back to harmless console output.
+# Email alerts go out via Resend when the RESEND_API_KEY secret is set. With no
+# key, scraper/notify.js falls back to harmless console output, so the refresh
+# still works before email is configured. "Newly on sale" is diffed against the
+# previously committed deals.json, so a normal run never re-emails old deals.
 
 on:
   schedule:
@@ -34,6 +36,13 @@ jobs:
       - run: npm ci
       - name: Scrape latest deals
         run: npm run scrape
+        env:
+          # Set RESEND_API_KEY under Settings → Secrets and variables → Actions
+          # (Secrets) to enable real emails. ALERT_FROM / ALERT_TO are optional
+          # repo Variables; ALERT_TO falls back to the owner's address below.
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_FROM: ${{ vars.ALERT_FROM || 'Scoop Alert <onboarding@resend.dev>' }}
+          ALERT_TO: ${{ vars.ALERT_TO || 'justin.kuzmanich@gmail.com' }}
       - name: Commit updated deals.json if changed
         run: |
           if git diff --quiet -- public/data/deals.json; then

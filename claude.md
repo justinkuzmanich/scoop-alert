@@ -93,22 +93,31 @@ npm run scrape:dry # same but DRY_RUN=1 (print emails instead of sending)
 ## Status — DONE
 - [x] Web app (UI, store selector, brand sections, sale badges, alert signup)
 - [x] Flipp scraper + brand matching + sale detection
-- [x] Pluggable email module (console fallback works; provider not wired)
+- [x] Pluggable email module (console fallback works; Resend wired in workflow)
 - [x] Real data snapshot committed
 - [x] Deployed to GitHub Pages (live link above)
+- [x] **Daily auto-refresh** — `.github/workflows/refresh-deals.yml` runs
+      `npm run scrape` on a daily cron (14:00 UTC) + manual dispatch, and commits
+      the updated `deals.json` (re-triggers deploy). A failed scrape exits
+      non-zero so no empty data is committed.
+- [x] **"Check deals" button** (App.jsx) re-fetches `deals.json` (cache-busted)
+      in place. NOTE: the static site can't run the scraper in-browser (no
+      backend; Flipp is bot-walled + CORS), so this pulls the freshest committed
+      file rather than scraping live.
+- [x] **Email alerts (Resend) wired.** `notify.js` sends via Resend when
+      `RESEND_API_KEY` is set; the refresh workflow passes it plus `ALERT_FROM`/
+      `ALERT_TO` (vars, with sensible defaults) as env to the scrape step.
+- [x] **State-diff bug fixed.** "Newly on sale" now diffs against the previously
+      committed `public/data/deals.json` (read at the start of `run.js`), not the
+      old gitignored `scraper/.state.json` — so CI only emails on genuinely new
+      deals. `.state.json` and its gitignore entry are removed.
+- [ ] **REMAINING MANUAL STEP for live email:** add the `RESEND_API_KEY` secret
+      under repo Settings → Secrets and variables → Actions. Until then, alerts
+      print to the workflow log (console fallback). Optionally override
+      `ALERT_FROM`/`ALERT_TO` as repo Variables.
 
 ## Status — TODO (in priority order)
-1. **Daily auto-refresh** — `.github/workflows/refresh-deals.yml` runs
-   `npm run scrape` on a cron and commits the updated `deals.json` (which
-   re-triggers deploy). May already be added; verify it exists and the run is green.
-2. **Email alerts (Resend).** Wire `scraper/notify.js` to a real provider.
-   - Add repo **secrets**: `RESEND_API_KEY`, and vars `ALERT_FROM`, `ALERT_TO`.
-   - Pass them into the refresh workflow's `npm run scrape` step as env.
-   - **State bug to fix:** "newly on sale" is currently diffed against
-     `scraper/.state.json`, which is gitignored and therefore absent on each CI
-     run → it would email every run. Fix by diffing against the previously
-     committed `deals.json` (or commit a small state file). Do this when wiring email.
-3. **Safeway "for U" (J4U) coupon adapter** — owner HAS a Safeway login and wants
+1. **Safeway "for U" (J4U) coupon adapter** — owner HAS a Safeway login and wants
    personalized coupons (richer than the public weekly ad).
    - API family: `https://www.safeway.com/abs/pub/web/j4u/api/offers/...` (returns
      JSON when authenticated; sits behind login + Imperva).
