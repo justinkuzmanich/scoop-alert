@@ -51,6 +51,11 @@ jobs:
           # When the manual "test_email" toggle is on, send one sample alert
           # (no scrape, deals.json untouched) to verify Resend delivery.
           TEST_ALERT: ${{ inputs.test_email && '1' || '' }}
+          # Optional: Safeway "for U" personalized deals. When SAFEWAY_SESSION
+          # (the logged-in Cookie header) is set, the scraper folds in member +
+          # coupon prices; absent/expired, it silently falls back to Flipp.
+          SAFEWAY_SESSION: ${{ secrets.SAFEWAY_SESSION }}
+          SAFEWAY_SUB_KEY: ${{ secrets.SAFEWAY_SUB_KEY }}
       - name: Commit updated deals.json if changed
         run: |
           if git diff --quiet -- public/data/deals.json; then
