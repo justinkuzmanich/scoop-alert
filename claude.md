@@ -114,22 +114,43 @@ npm run test:email # TEST_ALERT=1: send ONE sample alert (no scrape, no file
       committed `public/data/deals.json` (read at the start of `run.js`), not the
       old gitignored `scraper/.state.json` — so CI only emails on genuinely new
       deals. `.state.json` and its gitignore entry are removed.
-- [ ] **REMAINING MANUAL STEP for live email:** add the `RESEND_API_KEY` secret
-      under repo Settings → Secrets and variables → Actions. Until then, alerts
-      print to the workflow log (console fallback). Optionally override
-      `ALERT_FROM`/`ALERT_TO` as repo Variables.
+- [x] **Email alerts verified end-to-end.** `RESEND_API_KEY` secret added; a
+      `TEST_ALERT` run delivered to the owner's inbox (landed in spam first —
+      may need allow-listing / a verified `ALERT_FROM` domain for reliability).
+- [~] **Safeway "for U" (J4U) personalized adapter — BUILT (read-only), needs a
+      live session to finish.** `scraper/j4u.js` calls the real product-search
+      endpoint and maps results into the existing deal shape; wired into `run.js`
+      and merged with Flipp (lower price wins). See its own section below.
 
-## Status — TODO (in priority order)
-1. **Safeway "for U" (J4U) coupon adapter** — owner HAS a Safeway login and wants
-   personalized coupons (richer than the public weekly ad).
-   - API family: `https://www.safeway.com/abs/pub/web/j4u/api/offers/...` (returns
-     JSON when authenticated; sits behind login + Imperva).
-   - Approach: DON'T store the password. Capture the logged-in **session
-     token/cookie** from the browser, store as secret `SAFEWAY_SESSION`, call the
-     J4U API with it. Token expires → design for refresh/expiry.
-   - Build as a second adapter beside `flipp.js`; map offers into the same deal
-     shape so UI/alerts work unchanged. Keep tokens out of the repo. (Automating
-     this is against Safeway ToS — fine for personal use; keep it personal.)
+## Safeway "for U" (J4U) adapter — state & how it works
+- **Endpoint (verified by capturing a logged-in request):**
+  `GET https://www.safeway.com/abs/pub/xapi/pgmsearch/v1/search/products`
+  `?q=<brand>&storeid=<locId>&includeOffer=true&banner=safeway&channel=instore&...`
+- **Response shape:** products live in `primaryProducts.response.docs[]`. Each doc
+  has `basePrice` (regular), `price` (member/Club-Card price ALREADY applied),
+  `promoDescription`/`promoText`, `promoEndDate`, `upc`, `pid`, `aisleLocation`.
+  So the lower member price is readable directly — no clip/compute needed.
+  (Extra clippable coupons also appear under `offersData.upcs[<upc>].offers`;
+  not used yet.) Parsing verified against a real captured doc.
+- **Mapping:** `price`→price, `basePrice`→regularPrice, `promoDescription`→dealText,
+  `promoEndDate`→validTo. `toDeals()` flags onSale when price < basePrice. In
+  `run.js` we include only on-sale J4U items, merged with Flipp by name (lowest
+  price wins). Disabled unless `SAFEWAY_SESSION` is set → zero impact otherwise.
+- **Auth (the unfinished part):** send the logged-in **Cookie** header via the
+  `SAFEWAY_SESSION` env/secret (+ optional `SAFEWAY_SUB_KEY` =
+  `Ocp-Apim-Subscription-Key` if requests 401). DON'T store the password.
+  On 401/403/timeout the adapter logs and returns [] → falls back to Flipp.
+- **Two open risks to resolve with a real token:**
+  1. **Imperva bot-wall** — sandbox fetches to this endpoint time out; it may also
+     block GitHub Actions (datacenter IP). If so, run the J4U fetch locally
+     (residential IP) and push, instead of in CI.
+  2. **Session expiry** — the SSO token is short-lived (~45 min in older
+     captures). A daily cron needs either a long-lived refresh token (the
+     `refresh` XHR seen on the site) or manual re-capture. Design pending the
+     real token's contents.
+- **Next step:** owner captures the logged-in Cookie → store as `SAFEWAY_SESSION`
+  secret → test a run to see if Imperva allows it from CI; pick runtime + expiry
+  strategy from there. (Automating this is against Safeway ToS — personal use only.)
 
 ## Constraints / conventions
 - Never commit secrets/tokens (`.env` is gitignored; use GitHub Actions secrets).

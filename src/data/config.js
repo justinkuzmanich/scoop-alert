@@ -40,6 +40,7 @@ export const BRANDS = [
     color: '#7b1d3a', // deep burgundy
     accent: '#f3d9c6',
     match: ['haagen-dazs', 'haagen dazs', 'häagen-dazs', 'häagen dazs'],
+    query: 'Haagen-Dazs Ice Cream',
   },
   {
     id: 'ben-jerrys',
@@ -48,6 +49,7 @@ export const BRANDS = [
     color: '#1f6fb2', // sky blue
     accent: '#d7eccf',
     match: ['ben & jerry', "ben and jerry", 'ben&jerry'],
+    query: "Ben & Jerry's Ice Cream",
   },
 ]
 
