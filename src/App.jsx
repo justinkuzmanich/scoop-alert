@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { BRANDS } from './data/config.js'
 import {
   loadDeals,
@@ -14,15 +14,28 @@ export default function App() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [storeId, setStoreId] = useState(null)
+  const [refreshing, setRefreshing] = useState(false)
 
-  useEffect(() => {
-    loadDeals()
+  // Re-fetches the latest published deals.json. The browser can't run the
+  // scraper (no backend; Flipp is bot-walled + CORS), so "checking" means
+  // pulling the freshest file the daily workflow has committed. `bust` skips
+  // any CDN cache on an explicit user click.
+  const refresh = useCallback(({ bust = false } = {}) => {
+    setRefreshing(true)
+    setError(null)
+    return loadDeals({ bust })
       .then((d) => {
         setData(d)
-        setStoreId(d.stores?.[0]?.id ?? null)
+        // Keep the user's current store selection across a manual refresh.
+        setStoreId((prev) => prev ?? d.stores?.[0]?.id ?? null)
       })
       .catch((e) => setError(e.message))
+      .finally(() => setRefreshing(false))
   }, [])
+
+  useEffect(() => {
+    refresh()
+  }, [refresh])
 
   const stores = data?.stores || []
   const store = useMemo(
@@ -70,9 +83,17 @@ export default function App() {
                 ))}
               </select>
             </label>
-            <span>
-              {data.isSample && <span className="pill-sample">SAMPLE DATA</span>}{' '}
+            <span className="meta-right">
+              {data.isSample && <span className="pill-sample">SAMPLE DATA</span>}
               {data.checkedAt && <>Last checked {fmtDateTime(data.checkedAt)}</>}
+              <button
+                className="btn btn-sm"
+                onClick={() => refresh({ bust: true })}
+                disabled={refreshing}
+                title="Re-fetch the latest published deals"
+              >
+                {refreshing ? 'Checking…' : '🍦 Check deals'}
+              </button>
             </span>
           </div>
 
