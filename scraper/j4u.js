@@ -214,14 +214,24 @@ function buildSearchUrl(query, storeId, postalCode) {
   return `${J4U_SEARCH}?${params.toString()}`
 }
 
-async function j4uGet(url, { session, subKey, timeoutMs = 12000 }) {
+async function j4uGet(url, { session, subKey, timeoutMs = 30000 }) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
   try {
     const res = await fetch(url, {
       headers: {
-        Accept: 'application/json',
+        Accept: 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
         'User-Agent': BROWSER_UA,
+        Referer: 'https://www.safeway.com/shop/search-results.html',
+        Origin: 'https://www.safeway.com',
+        'sec-ch-ua':
+          '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
         Cookie: session,
         ...(subKey ? { 'Ocp-Apim-Subscription-Key': subKey } : {}),
       },
