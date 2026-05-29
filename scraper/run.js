@@ -14,8 +14,24 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { STORES } from '../src/data/config.js'
 import { fetchSafewayDeals } from './flipp.js'
+import { fetchSafewayJ4U } from './j4u.js'
 import { toDeals } from './match.js'
 import { notify } from './notify.js'
+
+// Merge deals from multiple sources, de-duping by product name and keeping the
+// lower-priced entry (e.g. a J4U member price that beats the weekly-ad price).
+function dealKey(d) {
+  return (d.name || '').toLowerCase().replace(/\s+/g, ' ').trim()
+}
+function mergeDeals(...lists) {
+  const byKey = new Map()
+  for (const d of lists.flat()) {
+    const k = dealKey(d)
+    const cur = byKey.get(k)
+    if (!cur || (d.price ?? Infinity) < (cur.price ?? Infinity)) byKey.set(k, d)
+  }
+  return [...byKey.values()]
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -78,7 +94,18 @@ async function main() {
   const storesOut = []
 
   for (const store of STORES) {
-    const deals = toDeals(rawByPostal[store.postalCode])
+    let deals = toDeals(rawByPostal[store.postalCode])
+
+    // If a Safeway session is configured, fold in personalized "for U" member
+    // deals for this store (on-sale items only, to keep the UI focused).
+    if (process.env.SAFEWAY_SESSION) {
+      const j4uDeals = toDeals(await fetchSafewayJ4U(store)).filter((d) => d.onSale)
+      if (j4uDeals.length) {
+        console.log(`   +${j4uDeals.length} J4U member deal(s) @ ${store.name}`)
+      }
+      deals = mergeDeals(deals, j4uDeals)
+    }
+
     const nowOnSale = deals.filter((d) => d.onSale)
     console.log(
       `   ${store.name}: ${deals.length} tracked-brand items, ${nowOnSale.length} on sale.`
