@@ -30,6 +30,30 @@ async function readJson(path, fallback) {
 }
 
 async function main() {
+  // One-time delivery test: TEST_ALERT=1 sends a single sample alert through
+  // the normal notify() path (real email if RESEND_API_KEY is set, console
+  // otherwise) without scraping or touching deals.json. Used to confirm the
+  // email pipeline works before a real deal ever lands.
+  if (process.env.TEST_ALERT === '1') {
+    const store = STORES[0]
+    const sample = [
+      {
+        id: 'test-alert',
+        brandId: 'haagen-dazs',
+        name: 'TEST — Häagen-Dazs Gelato 14-oz. 4-ct.',
+        price: 5.99,
+        regularPrice: 7.99,
+        onSale: true,
+        dealText: 'One-time Scoop Alert delivery test — not a real deal',
+        validTo: null,
+      },
+    ]
+    console.log('🧪 TEST_ALERT set — sending one sample alert email…')
+    await notify(store, sample)
+    console.log('✓ Test alert sent (no scrape, deals.json untouched).')
+    return
+  }
+
   // "Newly on sale" is diffed against the previously committed deals.json
   // (not a gitignored state file): on CI the repo checkout always carries the
   // last run's data, so we only email on genuinely new deals — never on every

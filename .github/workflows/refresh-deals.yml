@@ -15,6 +15,11 @@ on:
     # cheaply catches the mid-week rollover without depending on a fixed day.
     - cron: '0 14 * * *'
   workflow_dispatch:
+    inputs:
+      test_email:
+        description: 'Send a one-time test alert email instead of scraping'
+        type: boolean
+        default: false
 
 # Allow the job to commit the refreshed deals.json back to the repo.
 permissions:
@@ -43,6 +48,9 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_FROM: ${{ vars.ALERT_FROM || 'Scoop Alert <onboarding@resend.dev>' }}
           ALERT_TO: ${{ vars.ALERT_TO || 'justin.kuzmanich@gmail.com' }}
+          # When the manual "test_email" toggle is on, send one sample alert
+          # (no scrape, deals.json untouched) to verify Resend delivery.
+          TEST_ALERT: ${{ inputs.test_email && '1' || '' }}
       - name: Commit updated deals.json if changed
         run: |
           if git diff --quiet -- public/data/deals.json; then

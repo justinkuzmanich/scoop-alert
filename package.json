@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "scrape": "node scraper/run.js",
-    "scrape:dry": "DRY_RUN=1 node scraper/run.js"
+    "scrape:dry": "DRY_RUN=1 node scraper/run.js",
+    "test:email": "TEST_ALERT=1 node scraper/run.js"
   },
   "dependencies": {
     "react": "^18.3.1",

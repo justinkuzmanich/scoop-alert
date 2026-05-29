@@ -81,6 +81,9 @@ npm run dev        # local dev server
 npm run build      # production build -> dist/
 npm run scrape     # fetch live Safeway weekly ad, rewrite public/data/deals.json
 npm run scrape:dry # same but DRY_RUN=1 (print emails instead of sending)
+npm run test:email # TEST_ALERT=1: send ONE sample alert (no scrape, no file
+                   # changes) to verify Resend delivery. Also exposed as the
+                   # "test_email" toggle on the refresh-deals workflow_dispatch.
 ```
 
 ## Deployment
