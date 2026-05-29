@@ -130,8 +130,15 @@ npm run test:email # TEST_ALERT=1: send ONE sample alert (no scrape, no file
   has `basePrice` (regular), `price` (member/Club-Card price ALREADY applied),
   `promoDescription`/`promoText`, `promoEndDate`, `upc`, `pid`, `aisleLocation`.
   So the lower member price is readable directly — no clip/compute needed.
-  (Extra clippable coupons also appear under `offersData.upcs[<upc>].offers`;
-  not used yet.) Parsing verified against a real captured doc.
+  Parsing verified against a real captured doc.
+- **Coupon tier (3rd, lowest price):** extra clippable coupons (e.g. "$4.48 ea")
+  live in `offersData.upcs[<upc>].offers`. `j4u.js` reads them DEFENSIVELY:
+  it only promotes a coupon to the headline `price` when it parses an
+  unambiguous ABSOLUTE price below the member price; discount strings
+  ("SAVE $1.00", "20% off") are noted in `dealText` but NEVER turned into a
+  price (so a mis-parse can't show a wrong number). Field names are heuristic —
+  VALIDATE against real `offersData` on the first authenticated run. Also tracks
+  coupon expiry + clip status ("clip to activate" when unclipped).
 - **Mapping:** `price`→price, `basePrice`→regularPrice, `promoDescription`→dealText,
   `promoEndDate`→validTo. `toDeals()` flags onSale when price < basePrice. In
   `run.js` we include only on-sale J4U items, merged with Flipp by name (lowest
