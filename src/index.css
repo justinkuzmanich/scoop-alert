@@ -129,6 +129,17 @@ a { color: var(--pink-deep); }
   border-radius: 999px;
   padding: 8px 14px;
 }
+.meta-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 13px;
+  box-shadow: 0 5px 12px rgba(226, 60, 132, 0.3);
+}
 .pill-sample {
   background: #fff3cd;
   color: #8a6d00;

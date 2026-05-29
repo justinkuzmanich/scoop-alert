@@ -2,8 +2,11 @@ import { BRANDS } from '../data/config.js'
 
 // Loads the deals JSON produced by the scraper (or the bundled sample).
 // `base` respects Vite's configured base path so it works on GitHub Pages.
-export async function loadDeals() {
-  const url = `${import.meta.env.BASE_URL}data/deals.json`
+// Pass { bust: true } to defeat any CDN/browser caching — used by the manual
+// "Check deals" button so a re-check always pulls the freshest published file.
+export async function loadDeals({ bust = false } = {}) {
+  const base = `${import.meta.env.BASE_URL}data/deals.json`
+  const url = bust ? `${base}?t=${Date.now()}` : base
   const res = await fetch(url, { cache: 'no-store' })
   if (!res.ok) throw new Error(`Could not load deals (${res.status})`)
   return res.json()

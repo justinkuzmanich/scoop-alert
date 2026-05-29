@@ -20,7 +20,6 @@ import { notify } from './notify.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const DEALS_OUT = join(ROOT, 'public', 'data', 'deals.json')
-const STATE_FILE = join(__dirname, '.state.json')
 
 async function readJson(path, fallback) {
   try {
@@ -31,8 +30,17 @@ async function readJson(path, fallback) {
 }
 
 async function main() {
-  const prevState = await readJson(STATE_FILE, { onSaleByStore: {} })
-  const prevOnSaleByStore = prevState.onSaleByStore || {}
+  // "Newly on sale" is diffed against the previously committed deals.json
+  // (not a gitignored state file): on CI the repo checkout always carries the
+  // last run's data, so we only email on genuinely new deals — never on every
+  // run just because a local state file was missing.
+  const prevDeals = await readJson(DEALS_OUT, { stores: [] })
+  const prevOnSaleByStore = {}
+  for (const s of prevDeals.stores || []) {
+    prevOnSaleByStore[s.id] = (s.deals || [])
+      .filter((d) => d.onSale)
+      .map((d) => d.id)
+  }
 
   // Fetch each unique postal code once.
   const rawByPostal = {}
@@ -44,7 +52,6 @@ async function main() {
   }
 
   const storesOut = []
-  const nextOnSaleByStore = {}
 
   for (const store of STORES) {
     const deals = toDeals(rawByPostal[store.postalCode])
@@ -62,7 +69,6 @@ async function main() {
       address: store.address,
       deals,
     })
-    nextOnSaleByStore[store.id] = nowOnSale.map((d) => d.id)
 
     if (newlyOnSale.length) {
       console.log(`   🎉 ${newlyOnSale.length} newly on sale — alerting.`)
@@ -80,11 +86,6 @@ async function main() {
     )
   )
   console.log(`\n✓ Wrote ${DEALS_OUT} (${storesOut.length} store(s))`)
-
-  await writeFile(
-    STATE_FILE,
-    JSON.stringify({ onSaleByStore: nextOnSaleByStore }, null, 2)
-  )
 }
 
 main().catch((err) => {
