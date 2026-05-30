@@ -62,36 +62,24 @@ try {
   console.log(`   homepage HTTP ${home?.status()} (${Date.now() - t0}ms)`)
   await page.waitForTimeout(3000) // let challenge scripts settle
 
-  // 2) Fetch the J4U API from inside the page (real browser fetch), with a
-  // hard abort so a tarpitted request can't hang the job forever.
-  console.log('→ fetching J4U API from page context (25s cap)…')
-  const result = await page.evaluate(async (url) => {
-    const ctrl = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 25000)
+  // 2) Navigate DIRECTLY to the API URL instead of fetch()-ing inside the page.
+  // Safeway's Angular bundle monkey-patches window.fetch (the earlier "Failed
+  // to fetch" came from THEIR clientlib, not the network), so page.goto uses
+  // Chrome's real network stack + our cleared cookies and just renders the JSON.
+  console.log('→ navigating directly to J4U API (real browser nav)…')
+  try {
+    const resp = await page.goto(J4U_URL, { waitUntil: 'domcontentloaded', timeout: 45000 })
+    const status = resp?.status()
+    const body = await resp.text()
+    let docs = -1
     try {
-      const r = await fetch(url, {
-        headers: { Accept: 'application/json, text/plain, */*' },
-        signal: ctrl.signal,
-      })
-      const text = await r.text()
-      let docs = -1
-      try {
-        docs = JSON.parse(text)?.primaryProducts?.response?.docs?.length ?? -1
-      } catch {}
-      return { status: r.status, len: text.length, head: text.slice(0, 200), docs }
-    } catch (e) {
-      return { error: String(e && e.message ? e.message : e) }
-    } finally {
-      clearTimeout(timer)
-    }
-  }, J4U_URL)
-
-  if (result.error) {
-    console.log(`   ❌ J4U API fetch: ${result.error} (${Date.now() - t0}ms)`)
-  } else {
-    console.log(`   J4U API HTTP ${result.status} · ${result.len} bytes (${Date.now() - t0}ms)`)
-    console.log(`   product docs found: ${result.docs}`)
-    console.log(`   body head: ${result.head.replace(/\s+/g, ' ')}`)
+      docs = JSON.parse(body)?.primaryProducts?.response?.docs?.length ?? -1
+    } catch {}
+    console.log(`   J4U API HTTP ${status} · ${body.length} bytes (${Date.now() - t0}ms)`)
+    console.log(`   product docs found: ${docs}`)
+    console.log(`   body head: ${body.slice(0, 200).replace(/\s+/g, ' ')}`)
+  } catch (e) {
+    console.log(`   ❌ J4U API nav: ${e.message} (${Date.now() - t0}ms)`)
   }
 } catch (e) {
   console.log(`❌ ${e.message} (${Date.now() - t0}ms)`)
