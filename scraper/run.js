@@ -96,9 +96,10 @@ async function main() {
   for (const store of STORES) {
     let deals = toDeals(rawByPostal[store.postalCode])
 
-    // If a Safeway session is configured, fold in personalized "for U" member
-    // deals for this store (on-sale items only, to keep the UI focused).
-    if (process.env.SAFEWAY_SESSION) {
+    // If J4U is enabled (J4U_LOCAL for a local browser, or SAFEWAY_SESSION for
+    // the headless/CI path), fold in personalized "for U" member deals for this
+    // store (on-sale items only, to keep the UI focused).
+    if (process.env.J4U_LOCAL === '1' || process.env.SAFEWAY_SESSION) {
       const j4uDeals = toDeals(await fetchSafewayJ4U(store)).filter((d) => d.onSale)
       if (j4uDeals.length) {
         console.log(`   +${j4uDeals.length} J4U member deal(s) @ ${store.name}`)

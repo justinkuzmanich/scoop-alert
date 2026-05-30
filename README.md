@@ -68,6 +68,35 @@ state in `scraper/.state.json` so it only emails about *newly* on-sale items.
 
 ---
 
+## Personalized member deals (J4U) — run locally
+
+The weekly ad (Flipp) is public. Safeway's **"for U"** member/coupon pricing is
+per-account and lives behind a login + an Imperva bot-wall, so it can't run from
+CI reliably. The reliable way is to run it **on your own machine**, where there's
+no bot-wall fight and you can sign in once in a real browser.
+
+It's a two-step, one of which is one-time:
+
+```bash
+npm run j4u:login    # ONE TIME: opens a real browser — sign in, pick your Mill
+                     # Valley store, then press Enter. Session is saved locally.
+npm run scrape:local # fetches Flipp + your for-U deals, merges, writes deals.json
+```
+
+How it works: `j4u:login` saves a logged-in Chrome profile to `.j4u-profile/`
+(gitignored — it holds your live session, **never commit it**). `scrape:local`
+reuses that profile, drives Safeway's real search page so the app fires its own
+product query, and folds any on-sale member deals into the same `deals.json` the
+web app reads. If anything fails (expired session, etc.) it logs a warning and
+falls back to the Flipp weekly ad — it never breaks a run. If member deals stop
+showing up, your session expired: re-run `npm run j4u:login`.
+
+> Requires the browser binary once: `npx playwright install chromium`.
+> Set `J4U_HEADLESS=1` to hide the browser window once you trust the run.
+> Automating Safeway is against their ToS — keep this to personal use.
+
+---
+
 ## Email alerts
 
 Alerts are **pluggable** (`scraper/notify.js`). Out of the box:
