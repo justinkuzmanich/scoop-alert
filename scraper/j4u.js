@@ -224,17 +224,37 @@ function buildSearchUrl(query, storeId, postalCode) {
   return `${J4U_SEARCH}?${params.toString()}`
 }
 
+// Accept either a URL form (http://user:pass@host:port) or IPRoyal's
+// "Copy list" form (host:port:user:pass) — the latter lets you paste the
+// credential verbatim with no hand-editing, avoiding l/I/O/0 transcription
+// bugs. Returns { hostname, port, username, password }.
+export function parseProxy(raw) {
+  const s = String(raw).trim()
+  if (/^https?:\/\//i.test(s)) {
+    const u = new URL(s)
+    return {
+      hostname: u.hostname,
+      port: u.port || '80',
+      username: decodeURIComponent(u.username),
+      password: decodeURIComponent(u.password),
+    }
+  }
+  // host:port:user:pass — split into at most 4 parts so a ':' inside the
+  // password (rare, but possible) stays intact.
+  const m = s.match(/^([^:]+):([^:]+):([^:]+):(.+)$/)
+  if (!m) throw new Error('J4U_PROXY_URL: unrecognized proxy format')
+  return { hostname: m[1], port: m[2], username: m[3], password: m[4] }
+}
+
 // Build an https.Agent that tunnels HTTPS through an HTTP CONNECT proxy, so the
 // request originates from the proxy's (residential) IP instead of the runner.
 // Returns null when no proxyUrl is given → caller uses the default direct agent.
 export function makeProxyAgent(proxyUrl) {
   if (!proxyUrl) return null
-  const u = new URL(proxyUrl)
-  const auth = u.username
-    ? 'Basic ' +
-      Buffer.from(
-        `${decodeURIComponent(u.username)}:${decodeURIComponent(u.password)}`
-      ).toString('base64')
+  const p = parseProxy(proxyUrl)
+  const u = { hostname: p.hostname, port: p.port }
+  const auth = p.username
+    ? 'Basic ' + Buffer.from(`${p.username}:${p.password}`).toString('base64')
     : null
 
   class TunnelAgent extends https.Agent {
