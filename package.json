@@ -13,6 +13,7 @@
     "test:email": "TEST_ALERT=1 node scraper/run.js"
   },
   "dependencies": {
+    "playwright": "^1.60.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
