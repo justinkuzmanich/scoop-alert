@@ -16,11 +16,21 @@
 //     (the full Cookie header copied from a logged-in request).
 //   * Some deployments also require an API-gateway key — set SAFEWAY_SUB_KEY
 //     to the `Ocp-Apim-Subscription-Key` header value if requests 401.
+//   * Imperva also blocks datacenter IPs (e.g. GitHub Actions runners), which
+//     manifests as a silent timeout rather than a 4xx. Set J4U_PROXY_URL to a
+//     residential proxy (http://user:pass@host:port) and requests are tunneled
+//     through it via HTTP CONNECT so they originate from a trusted IP. Unset →
+//     requests go out direct (works locally / from a home IP).
 //   * Sessions expire; on 401/403/timeout this adapter logs and returns [],
 //     so the pipeline cleanly falls back to Flipp instead of crashing.
 //
-// Nothing secret is stored in the repo — the session goes in a GitHub secret.
+// Nothing secret is stored in the repo — the session and proxy URL both live
+// in GitHub secrets.
 
+import https from 'node:https'
+import http from 'node:http'
+import tls from 'node:tls'
+import zlib from 'node:zlib'
 import { BRANDS } from '../src/data/config.js'
 
 const J4U_SEARCH =
@@ -214,34 +224,100 @@ function buildSearchUrl(query, storeId, postalCode) {
   return `${J4U_SEARCH}?${params.toString()}`
 }
 
-async function j4uGet(url, { session, subKey, timeoutMs = 30000 }) {
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), timeoutMs)
-  try {
-    const res = await fetch(url, {
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'User-Agent': BROWSER_UA,
-        Referer: 'https://www.safeway.com/shop/search-results.html',
-        Origin: 'https://www.safeway.com',
-        'sec-ch-ua':
-          '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        Cookie: session,
-        ...(subKey ? { 'Ocp-Apim-Subscription-Key': subKey } : {}),
-      },
-      signal: controller.signal,
-    })
-    if (!res.ok) throw new Error(`J4U HTTP ${res.status}`)
-    return await res.json()
-  } finally {
-    clearTimeout(timer)
+// Build an https.Agent that tunnels HTTPS through an HTTP CONNECT proxy, so the
+// request originates from the proxy's (residential) IP instead of the runner.
+// Returns null when no proxyUrl is given → caller uses the default direct agent.
+export function makeProxyAgent(proxyUrl) {
+  if (!proxyUrl) return null
+  const u = new URL(proxyUrl)
+  const auth = u.username
+    ? 'Basic ' +
+      Buffer.from(
+        `${decodeURIComponent(u.username)}:${decodeURIComponent(u.password)}`
+      ).toString('base64')
+    : null
+
+  class TunnelAgent extends https.Agent {
+    createConnection(options, cb) {
+      const target = `${options.host}:${options.port || 443}`
+      const req = http.request({
+        host: u.hostname,
+        port: u.port || 80,
+        method: 'CONNECT',
+        path: target,
+        headers: { Host: target, ...(auth ? { 'Proxy-Authorization': auth } : {}) },
+        timeout: 30000,
+      })
+      req.once('connect', (res, socket) => {
+        if (res.statusCode !== 200) {
+          socket.destroy()
+          cb(new Error(`proxy CONNECT ${res.statusCode}`))
+          return
+        }
+        const tlsSocket = tls.connect(
+          { socket, servername: options.host },
+          () => cb(null, tlsSocket)
+        )
+        tlsSocket.once('error', cb)
+      })
+      req.once('timeout', () => req.destroy(new Error('proxy CONNECT timeout')))
+      req.once('error', cb)
+      req.end()
+    }
   }
+  return new TunnelAgent({ keepAlive: false })
+}
+
+async function j4uGet(url, { session, subKey, agent, timeoutMs = 30000 }) {
+  const headers = {
+    Accept: 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'User-Agent': BROWSER_UA,
+    Referer: 'https://www.safeway.com/shop/search-results.html',
+    Origin: 'https://www.safeway.com',
+    'sec-ch-ua':
+      '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    Cookie: session,
+    ...(subKey ? { 'Ocp-Apim-Subscription-Key': subKey } : {}),
+  }
+
+  return new Promise((resolve, reject) => {
+    const req = https.request(
+      url,
+      { method: 'GET', headers, agent: agent || undefined, timeout: timeoutMs },
+      (res) => {
+        const status = res.statusCode
+        const enc = String(res.headers['content-encoding'] || '').toLowerCase()
+        let stream = res
+        if (enc === 'gzip') stream = res.pipe(zlib.createGunzip())
+        else if (enc === 'deflate') stream = res.pipe(zlib.createInflate())
+        else if (enc === 'br') stream = res.pipe(zlib.createBrotliDecompress())
+        const chunks = []
+        stream.on('data', (c) => chunks.push(c))
+        stream.on('end', () => {
+          if (status < 200 || status >= 300) {
+            reject(new Error(`J4U HTTP ${status}`))
+            return
+          }
+          try {
+            resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')))
+          } catch {
+            reject(new Error('J4U bad JSON'))
+          }
+        })
+        stream.on('error', reject)
+      }
+    )
+    req.on('error', reject)
+    req.on('timeout', () => req.destroy(new Error('This operation was aborted')))
+    req.end()
+  })
 }
 
 // Public: fetch personalized deals for one store. Returns raw products (same
@@ -252,7 +328,11 @@ export async function fetchSafewayJ4U(store, env = process.env) {
   if (!session) return [] // adapter disabled until a session is provided
 
   const storeId = store.locId
-  const opts = { session, subKey: env.SAFEWAY_SUB_KEY }
+  const opts = {
+    session,
+    subKey: env.SAFEWAY_SUB_KEY,
+    agent: makeProxyAgent(env.J4U_PROXY_URL),
+  }
 
   const seen = new Set()
   const raw = []
