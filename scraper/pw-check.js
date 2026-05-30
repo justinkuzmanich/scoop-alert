@@ -50,8 +50,27 @@ try {
     locale: 'en-US',
   })
   if (session) await ctx.addCookies(cookiesFromHeader(session))
+  // J4U is per-store. Headless lands with no store selected, so the app shows a
+  // store-picker and never fires a product search. Pin Camino Alto (storeid 788)
+  // via the common Safeway store cookies so the search runs against that store.
+  await ctx.addCookies([
+    { name: 'storeId', value: '788', domain: '.safeway.com', path: '/' },
+    { name: 'preferredStoreId', value: '788', domain: '.safeway.com', path: '/' },
+  ])
 
   const page = await ctx.newPage()
+
+  // Log every XHR/fetch the page fires, so we can SEE whether pgmsearch runs,
+  // whether it's a store-picker, a challenge, or a different endpoint.
+  page.on('request', (req) => {
+    const ty = req.resourceType()
+    if (ty === 'xhr' || ty === 'fetch') console.log(`     ↗ ${req.method()} ${req.url().slice(0, 110)}`)
+  })
+  page.on('response', (res) => {
+    const ty = res.request().resourceType()
+    if ((ty === 'xhr' || ty === 'fetch') && res.url().includes('safeway'))
+      console.log(`     ↘ ${res.status()} ${res.url().slice(0, 110)}`)
+  })
 
   // 1) Warm up: load the homepage so Imperva runs its JS challenge / sets clearance.
   console.log('→ warming up on safeway.com homepage…')
@@ -93,6 +112,8 @@ try {
   } catch (e) {
     console.log(`   (search page nav: ${e.message})`)
   }
+  await page.waitForTimeout(5000) // give the SPA time to fire its XHRs
+  console.log(`   page: "${await page.title()}" @ ${page.url().slice(0, 90)}`)
 
   const result = await waitForApi
   if (result.error) {
