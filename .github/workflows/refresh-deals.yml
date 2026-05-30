@@ -39,6 +39,10 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      # The J4U (Safeway "for U") adapter drives a real headless browser to get
+      # past Imperva, so Chromium must be present. Harmless if J4U is disabled.
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
       - name: Scrape latest deals
         run: npm run scrape
         env:
@@ -52,12 +56,12 @@ jobs:
           # (no scrape, deals.json untouched) to verify Resend delivery.
           TEST_ALERT: ${{ inputs.test_email && '1' || '' }}
           # Optional: Safeway "for U" personalized deals. When SAFEWAY_SESSION
-          # (the logged-in Cookie header) is set, the scraper folds in member +
-          # coupon prices; absent/expired, it silently falls back to Flipp.
+          # (the logged-in Cookie header) is set, the scraper drives a headless
+          # browser to fold in member + coupon prices; absent/expired/blocked,
+          # it silently falls back to Flipp.
           SAFEWAY_SESSION: ${{ secrets.SAFEWAY_SESSION }}
-          SAFEWAY_SUB_KEY: ${{ secrets.SAFEWAY_SUB_KEY }}
-          # Residential proxy so J4U requests don't originate from the (Imperva-
-          # blocked) GitHub Actions IP range. Unset → requests go out direct.
+          # Residential proxy so the J4U browser exits from a trusted IP instead
+          # of the (Imperva-blocked) GitHub Actions range. Unset → goes direct.
           J4U_PROXY_URL: ${{ secrets.J4U_PROXY_URL }}
       - name: Commit updated deals.json if changed
         run: |

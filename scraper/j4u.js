@@ -14,31 +14,18 @@
 // IMPORTANT — this endpoint sits behind login + an Imperva bot-wall:
 //   * It needs your browser session, supplied via the SAFEWAY_SESSION env var
 //     (the full Cookie header copied from a logged-in request).
-//   * Some deployments also require an API-gateway key — set SAFEWAY_SUB_KEY
-//     to the `Ocp-Apim-Subscription-Key` header value if requests 401.
-//   * Imperva also blocks datacenter IPs (e.g. GitHub Actions runners), which
-//     manifests as a silent timeout rather than a 4xx. Set J4U_PROXY_URL to a
-//     residential proxy (http://user:pass@host:port) and requests are tunneled
-//     through it via HTTP CONNECT so they originate from a trusted IP. Unset →
-//     requests go out direct (works locally / from a home IP).
-//   * Sessions expire; on 401/403/timeout this adapter logs and returns [],
-//     so the pipeline cleanly falls back to Flipp instead of crashing.
+//   * Imperva tarpits raw-HTTP requests to this API even through a residential
+//     proxy, so the fetch is driven through a real headless browser (Playwright)
+//     in scraper/j4u-browser.js — see fetchSafewayJ4U below. In CI, set
+//     J4U_PROXY_URL to a residential proxy so the browser exits from a trusted
+//     IP; unset → goes direct (works locally / from a home IP).
+//   * Sessions expire; on any auth/expiry/bot-wall failure this adapter logs
+//     and returns [], so the pipeline cleanly falls back to Flipp.
 //
 // Nothing secret is stored in the repo — the session and proxy URL both live
 // in GitHub secrets.
 
-import https from 'node:https'
-import http from 'node:http'
-import tls from 'node:tls'
-import zlib from 'node:zlib'
 import { BRANDS } from '../src/data/config.js'
-
-const J4U_SEARCH =
-  'https://www.safeway.com/abs/pub/xapi/pgmsearch/v1/search/products'
-
-const BROWSER_UA =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
-  '(KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
 // ---------------------------------------------------------------------------
 // Coupon tier (the "$4.48 each" clippable offer — an extra discount BELOW the
@@ -201,29 +188,6 @@ export function parseJ4USearch(json) {
   return docs.map((d) => mapJ4UDoc(d, offersByUpc)).filter(Boolean)
 }
 
-function buildSearchUrl(query, storeId, postalCode) {
-  const params = new URLSearchParams({
-    'request-id': String(Math.floor(Math.random() * 1e19)),
-    url: 'https://www.safeway.com',
-    pageurl: 'https://www.safeway.com',
-    pagename: 'search',
-    rows: '30',
-    start: '0',
-    'search-type': 'keyword',
-    storeid: String(storeId),
-    featured: 'true',
-    q: query,
-    sort: '',
-    timezone: 'America/Los_Angeles',
-    dvid: 'web-4.1search',
-    channel: 'instore',
-    includeOffer: 'true',
-    banner: 'safeway',
-  })
-  if (postalCode) params.set('zipcode', postalCode)
-  return `${J4U_SEARCH}?${params.toString()}`
-}
-
 // Accept either a URL form (http://user:pass@host:port) or IPRoyal's
 // "Copy list" form (host:port:user:pass) — the latter lets you paste the
 // credential verbatim with no hand-editing, avoiding l/I/O/0 transcription
@@ -246,152 +210,36 @@ export function parseProxy(raw) {
   return { hostname: m[1], port: m[2], username: m[3], password: m[4] }
 }
 
-// Build an https.Agent that tunnels HTTPS through an HTTP CONNECT proxy, so the
-// request originates from the proxy's (residential) IP instead of the runner.
-// Returns null when no proxyUrl is given → caller uses the default direct agent.
-export function makeProxyAgent(proxyUrl) {
-  if (!proxyUrl) return null
-  const p = parseProxy(proxyUrl)
-  const u = { hostname: p.hostname, port: p.port }
-  const auth = p.username
-    ? 'Basic ' + Buffer.from(`${p.username}:${p.password}`).toString('base64')
-    : null
-
-  class TunnelAgent extends https.Agent {
-    createConnection(options, cb) {
-      const target = `${options.host}:${options.port || 443}`
-      const req = http.request({
-        host: u.hostname,
-        port: u.port || 80,
-        method: 'CONNECT',
-        path: target,
-        headers: { Host: target, ...(auth ? { 'Proxy-Authorization': auth } : {}) },
-        timeout: 30000,
-      })
-      req.once('connect', (res, socket) => {
-        if (res.statusCode !== 200) {
-          // Surface the proxy's own explanation (IPRoyal returns a reason in
-          // the status line / body — e.g. bad creds, no bandwidth, IP not
-          // whitelisted). Without this we only see a bare "407".
-          let body = ''
-          res.on('data', (c) => (body += c))
-          res.on('end', () => {
-            const detail = `${res.statusMessage || ''} ${body}`.replace(/\s+/g, ' ').trim()
-            socket.destroy()
-            cb(new Error(`proxy CONNECT ${res.statusCode}${detail ? ` — ${detail}` : ''}`))
-          })
-          res.resume()
-          return
-        }
-        const tlsSocket = tls.connect(
-          { socket, servername: options.host },
-          () => cb(null, tlsSocket)
-        )
-        tlsSocket.once('error', cb)
-      })
-      req.once('timeout', () => req.destroy(new Error('proxy CONNECT timeout')))
-      req.once('error', cb)
-      req.end()
-    }
-  }
-  return new TunnelAgent({ keepAlive: false })
-}
-
-async function j4uGet(url, { session, subKey, agent, timeoutMs = 30000 }) {
-  // node:http rejects header values containing CR/LF or other control chars
-  // (unlike fetch, which tolerated them). A copy-pasted Cookie often carries a
-  // stray newline/tab, so strip control bytes and trim before sending.
-  const cleanHeader = (v) =>
-    typeof v === 'string' ? v.replace(/[\r\n\t]+/g, ' ').replace(/[^\x20-\x7E]/g, '').trim() : v
-
-  const headers = {
-    Accept: 'application/json, text/plain, */*',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'User-Agent': BROWSER_UA,
-    Referer: 'https://www.safeway.com/shop/search-results.html',
-    Origin: 'https://www.safeway.com',
-    'sec-ch-ua':
-      '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    Cookie: cleanHeader(session),
-    ...(subKey ? { 'Ocp-Apim-Subscription-Key': cleanHeader(subKey) } : {}),
-  }
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(
-      url,
-      { method: 'GET', headers, agent: agent || undefined, timeout: timeoutMs },
-      (res) => {
-        const status = res.statusCode
-        const enc = String(res.headers['content-encoding'] || '').toLowerCase()
-        let stream = res
-        if (enc === 'gzip') stream = res.pipe(zlib.createGunzip())
-        else if (enc === 'deflate') stream = res.pipe(zlib.createInflate())
-        else if (enc === 'br') stream = res.pipe(zlib.createBrotliDecompress())
-        const chunks = []
-        stream.on('data', (c) => chunks.push(c))
-        stream.on('end', () => {
-          if (status < 200 || status >= 300) {
-            reject(new Error(`J4U HTTP ${status}`))
-            return
-          }
-          try {
-            resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')))
-          } catch {
-            reject(new Error('J4U bad JSON'))
-          }
-        })
-        stream.on('error', reject)
-      }
-    )
-    req.on('error', reject)
-    req.on('timeout', () => req.destroy(new Error('This operation was aborted')))
-    req.end()
-  })
-}
-
 // Public: fetch personalized deals for one store. Returns raw products (same
-// shape as flipp.js). Requires SAFEWAY_SESSION; returns [] (with a warning) on
+// shape as flipp.js). Requires SAFEWAY_SESSION; returns [] (never throws) on
 // any auth/expiry/bot-wall failure so the caller can fall back to Flipp.
+//
+// Imperva tarpits raw-HTTP requests to the J4U API even through a residential
+// proxy, so we drive the real web app in a headless browser and intercept the
+// pgmsearch XHR it fires. The browser is dynamically imported so environments
+// without Playwright (and runs without SAFEWAY_SESSION) pay no cost.
 export async function fetchSafewayJ4U(store, env = process.env) {
-  const session = env.SAFEWAY_SESSION
-  if (!session) return [] // adapter disabled until a session is provided
+  if (!env.SAFEWAY_SESSION) return [] // adapter disabled until a session is provided
 
-  const storeId = store.locId
-  const opts = {
-    session,
-    subKey: env.SAFEWAY_SUB_KEY,
-    agent: makeProxyAgent(env.J4U_PROXY_URL),
+  const queries = BRANDS.map((b) => b.query || b.name)
+
+  let results
+  try {
+    const { fetchJ4USearchJson } = await import('./j4u-browser.js')
+    results = await fetchJ4USearchJson({ store, queries, env })
+  } catch (err) {
+    console.warn(`   ⚠️  J4U browser unavailable @ ${store.id}: ${err.message}`)
+    return []
   }
 
   const seen = new Set()
   const raw = []
-  for (const brand of BRANDS) {
-    const query = brand.query || brand.name
-    try {
-      const json = await j4uGet(
-        buildSearchUrl(query, storeId, store.postalCode),
-        opts
-      )
-      for (const p of parseJ4USearch(json)) {
-        const key = p.id || p.name
-        if (seen.has(key)) continue
-        seen.add(key)
-        raw.push(p)
-      }
-    } catch (err) {
-      // Only the Safeway endpoint's own 401/403 means an expired session; a
-      // "proxy CONNECT 4xx" is the proxy rejecting us, not Safeway.
-      const expired = /J4U HTTP (401|403)/.test(err.message)
-      console.warn(
-        `   ⚠️  J4U fetch for "${query}" @ ${store.id} failed: ${err.message}` +
-          (expired ? ' (session likely expired — re-capture SAFEWAY_SESSION)' : '')
-      )
+  for (const { json } of results) {
+    for (const p of parseJ4USearch(json)) {
+      const key = p.id || p.name
+      if (seen.has(key)) continue
+      seen.add(key)
+      raw.push(p)
     }
   }
   return raw
