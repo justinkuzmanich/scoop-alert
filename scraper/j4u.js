@@ -385,7 +385,9 @@ export async function fetchSafewayJ4U(store, env = process.env) {
         raw.push(p)
       }
     } catch (err) {
-      const expired = /\b(401|403)\b/.test(err.message)
+      // Only the Safeway endpoint's own 401/403 means an expired session; a
+      // "proxy CONNECT 4xx" is the proxy rejecting us, not Safeway.
+      const expired = /J4U HTTP (401|403)/.test(err.message)
       console.warn(
         `   ⚠️  J4U fetch for "${query}" @ ${store.id} failed: ${err.message}` +
           (expired ? ' (session likely expired — re-capture SAFEWAY_SESSION)' : '')
