@@ -1,0 +1,22 @@
+name: Proxy check (diagnostic)
+
+# Manual one-off: probes whether the J4U_PROXY_URL proxy works and whether
+# safeway.com is gated. Safe — reads nothing, writes nothing, just prints.
+# Delete this workflow once the proxy question is settled.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  proxy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Probe targets through proxy
+        run: node scraper/proxy-check.js
+        env:
+          J4U_PROXY_URL: ${{ secrets.J4U_PROXY_URL }}
