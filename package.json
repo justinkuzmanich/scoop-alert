@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "scrape": "node scraper/run.js",
     "scrape:dry": "DRY_RUN=1 node scraper/run.js",
+    "scrape:local": "J4U_LOCAL=1 node scraper/run.js",
+    "j4u:login": "node scraper/j4u-login.js",
     "test:email": "TEST_ALERT=1 node scraper/run.js"
   },
   "dependencies": {

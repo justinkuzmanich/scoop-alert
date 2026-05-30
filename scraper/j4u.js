@@ -219,14 +219,27 @@ export function parseProxy(raw) {
 // pgmsearch XHR it fires. The browser is dynamically imported so environments
 // without Playwright (and runs without SAFEWAY_SESSION) pay no cost.
 export async function fetchSafewayJ4U(store, env = process.env) {
-  if (!env.SAFEWAY_SESSION) return [] // adapter disabled until a session is provided
+  // Two ways to enable J4U:
+  //   * J4U_LOCAL=1     — run a real browser on your own machine using a saved,
+  //                       logged-in profile (see j4u-browser-local.js). No cookie
+  //                       or proxy needed; this is the recommended local path.
+  //   * SAFEWAY_SESSION — headless/CI path: drive a headless browser with a
+  //                       copied session cookie (and a residential proxy in CI).
+  // Disabled (returns []) unless one is set, so the pipeline falls back to Flipp.
+  const local = env.J4U_LOCAL === '1'
+  if (!local && !env.SAFEWAY_SESSION) return []
 
   const queries = BRANDS.map((b) => b.query || b.name)
 
   let results
   try {
-    const { fetchJ4USearchJson } = await import('./j4u-browser.js')
-    results = await fetchJ4USearchJson({ store, queries, env })
+    if (local) {
+      const { fetchJ4USearchJsonLocal } = await import('./j4u-browser-local.js')
+      results = await fetchJ4USearchJsonLocal({ store, queries, env })
+    } else {
+      const { fetchJ4USearchJson } = await import('./j4u-browser.js')
+      results = await fetchJ4USearchJson({ store, queries, env })
+    }
   } catch (err) {
     console.warn(`   ⚠️  J4U browser unavailable @ ${store.id}: ${err.message}`)
     return []

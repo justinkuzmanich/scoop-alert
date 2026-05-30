@@ -3,3 +3,6 @@ dist
 .env
 .env.local
 *.log
+
+# Local J4U browser profile — holds a live, logged-in Safeway session. Never commit.
+.j4u-profile/

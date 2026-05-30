@@ -20,18 +20,35 @@ Handoff notes for the next session.
 - ✅ GitHub Actions daily cron runs `npm run scrape` + commits `deals.json`.
 - ✅ Resend wired up in `notify.js` for real alert emails.
 
-### Safeway "for U" personalized member deals (J4U) — ATTEMPTED, PARKED
+### Safeway "for U" personalized member deals (J4U)
 
 Goal: fold each store's personalized member/coupon pricing (richer than the
 public weekly ad) into the same deal shape as Flipp.
 
-**Status: built but dormant.** The adapter (`scraper/j4u.js` +
-`scraper/j4u-browser.js`) is wired in and *fails safe* — on any problem it logs
-a warning and returns `[]`, so the pipeline always falls back to Flipp. It is
-enabled only when the `SAFEWAY_SESSION` secret is set. The site and email
-alerts run entirely on Flipp today; J4U currently contributes nothing.
+**Two paths, both fail safe (any problem → logs a warning, returns `[]`, falls
+back to Flipp). The site/cron run on Flipp; J4U only adds to it.**
 
-**What works (verified):**
+**A) LOCAL — built, ready to use (recommended).** Run on your own machine, where
+there's no Imperva fight (home IP) and you sign in once in a real browser:
+- `npm run j4u:login` — one time: opens a visible browser, you sign in + pick the
+  Mill Valley store, press Enter. Saves a logged-in Chrome profile to
+  `.j4u-profile/` (gitignored — holds a live session, never commit).
+- `npm run scrape:local` — reuses that profile, drives Safeway's real search page
+  so the app fires its own `pgmsearch` XHR, intercepts it, merges member deals
+  into `deals.json`. Re-run `j4u:login` when the session expires.
+- Files: `scraper/j4u-browser-local.js` (headed persistent-profile browser) +
+  `scraper/j4u-login.js` (the setup entry). Enabled by `J4U_LOCAL=1`.
+- This is the path that sidesteps BOTH walls below (datacenter IP + store not
+  selected), because it's a real logged-in browser on a home IP.
+- Still TODO on this path: actually run it on Justin's desktop and verify the
+  `pgmsearch` JSON parses into real member prices; tighten coupon-field parsing
+  in `j4u.js` against the first real response (see the DEFENSIVE note there).
+
+**B) HEADLESS / CI — built but dormant, blocked.** The adapter (`scraper/j4u.js`
++ `scraper/j4u-browser.js`) runs headless behind a residential proxy, enabled by
+the `SAFEWAY_SESSION` secret. Contributes nothing today — it hits the wall below.
+
+**What works on the CI path (verified):**
 - Residential proxy (IPRoyal, `J4U_PROXY_URL` secret) — reaches `safeway.com`
   after completing IPRoyal identity verification (KYC). Required because GitHub
   Actions datacenter IPs are blocked by Imperva.
@@ -50,19 +67,15 @@ intercept. Symptom in logs: `⚠️ J4U: no search response for "<brand>"`.
   enough. The real app sets the store via a specific flow — likely a `pem_jwe`
   (JWT-ish) cookie and/or an API call triggered by choosing a store in the UI.
 
-**To resume (in rough order):**
-1. With a real logged-in browser, pick the Mill Valley store, then dump ALL
-   safeway.com cookies + the exact requests fired on store selection (devtools
-   → Network). Replicate those cookies/calls in `j4u-browser.js` before loading
-   the search page.
-2. If cookies alone don't do it, drive the store-picker UI by clicking
-   (Playwright) instead of pre-seeding cookies.
-3. Confirm the `pgmsearch` XHR then fires and returns `primaryProducts.response.docs`.
+**Why the CI path is blocked → use path A.** The local path (A) was built
+*because* of this wall: a real logged-in browser on a home IP both selects the
+store properly and dodges Imperva, so the `pgmsearch` XHR fires. If you ever want
+to revive the headless/CI path, the open task is replicating the store-selection
+flow (dump the cookies/requests fired when picking a store in a real browser and
+replay them in `j4u-browser.js`, or drive the store-picker UI by clicking).
 
-**Cheaper alternative:** run `j4u-browser.js` on a personal machine (real
-logged-in Chrome, home IP — no Imperva fight, no proxy/KYC) on demand and commit
-the resulting data. Sidesteps the entire CI bot-wall problem; semi-manual.
-
-**Notes:** `SAFEWAY_SESSION` (the logged-in Cookie header) expires and must be
-re-captured periodically. Never commit it — it's a GitHub secret. Automating
+**Notes:** the IPRoyal residential proxy (~1 GB, ~$7) bought for the CI path is
+unused while path A is the plan — consider refunding. `SAFEWAY_SESSION` (the CI
+path's cookie) expires and is a GitHub secret — never commit it. Path A's
+`.j4u-profile/` likewise holds a live session and is gitignored. Automating
 Safeway is against their ToS; keep it personal-use only.
