@@ -62,24 +62,45 @@ try {
   console.log(`   homepage HTTP ${home?.status()} (${Date.now() - t0}ms)`)
   await page.waitForTimeout(3000) // let challenge scripts settle
 
-  // 2) Navigate DIRECTLY to the API URL instead of fetch()-ing inside the page.
-  // Safeway's Angular bundle monkey-patches window.fetch (the earlier "Failed
-  // to fetch" came from THEIR clientlib, not the network), so page.goto uses
-  // Chrome's real network stack + our cleared cookies and just renders the JSON.
-  console.log('→ navigating directly to J4U API (real browser nav)…')
+  // 2) Drive the real UI: load the search-results page for the brand and let
+  // Safeway's own Angular app fire the pgmsearch XHR (correct Sec-Fetch-* and
+  // app headers). We just listen for any pgmsearch response and read its JSON.
+  // Hitting the API URL directly sends Sec-Fetch-Mode: navigate, which Imperva
+  // tarpits; an in-app XHR is the legitimate context.
+  const searchUrl =
+    'https://www.safeway.com/shop/search-results.html?q=Haagen-Dazs'
+  console.log('→ loading search-results page; waiting for in-app pgmsearch XHR…')
+
+  const waitForApi = page
+    .waitForResponse(
+      (r) => r.url().includes('/pgmsearch/') && r.request().method() === 'GET',
+      { timeout: 45000 }
+    )
+    .then(async (r) => {
+      const status = r.status()
+      let body = ''
+      let docs = -1
+      try {
+        body = await r.text()
+        docs = JSON.parse(body)?.primaryProducts?.response?.docs?.length ?? -1
+      } catch {}
+      return { status, len: body.length, docs, head: body.slice(0, 200) }
+    })
+    .catch((e) => ({ error: e.message }))
+
   try {
-    const resp = await page.goto(J4U_URL, { waitUntil: 'domcontentloaded', timeout: 45000 })
-    const status = resp?.status()
-    const body = await resp.text()
-    let docs = -1
-    try {
-      docs = JSON.parse(body)?.primaryProducts?.response?.docs?.length ?? -1
-    } catch {}
-    console.log(`   J4U API HTTP ${status} · ${body.length} bytes (${Date.now() - t0}ms)`)
-    console.log(`   product docs found: ${docs}`)
-    console.log(`   body head: ${body.slice(0, 200).replace(/\s+/g, ' ')}`)
+    await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 45000 })
   } catch (e) {
-    console.log(`   ❌ J4U API nav: ${e.message} (${Date.now() - t0}ms)`)
+    console.log(`   (search page nav: ${e.message})`)
+  }
+
+  const result = await waitForApi
+  if (result.error) {
+    console.log(`   ❌ no pgmsearch XHR seen: ${result.error} (${Date.now() - t0}ms)`)
+  } else {
+    console.log(`   J4U XHR HTTP ${result.status} · ${result.len} bytes (${Date.now() - t0}ms)`)
+    console.log(`   product docs found: ${result.docs}`)
+    console.log(`   body head: ${result.head.replace(/\s+/g, ' ')}`)
   }
 } catch (e) {
   console.log(`❌ ${e.message} (${Date.now() - t0}ms)`)
