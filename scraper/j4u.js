@@ -269,6 +269,12 @@ export function makeProxyAgent(proxyUrl) {
 }
 
 async function j4uGet(url, { session, subKey, agent, timeoutMs = 30000 }) {
+  // node:http rejects header values containing CR/LF or other control chars
+  // (unlike fetch, which tolerated them). A copy-pasted Cookie often carries a
+  // stray newline/tab, so strip control bytes and trim before sending.
+  const cleanHeader = (v) =>
+    typeof v === 'string' ? v.replace(/[\r\n\t]+/g, ' ').replace(/[^\x20-\x7E]/g, '').trim() : v
+
   const headers = {
     Accept: 'application/json, text/plain, */*',
     'Accept-Language': 'en-US,en;q=0.9',
@@ -283,8 +289,8 @@ async function j4uGet(url, { session, subKey, agent, timeoutMs = 30000 }) {
     'sec-fetch-dest': 'empty',
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-origin',
-    Cookie: session,
-    ...(subKey ? { 'Ocp-Apim-Subscription-Key': subKey } : {}),
+    Cookie: cleanHeader(session),
+    ...(subKey ? { 'Ocp-Apim-Subscription-Key': cleanHeader(subKey) } : {}),
   }
 
   return new Promise((resolve, reject) => {
