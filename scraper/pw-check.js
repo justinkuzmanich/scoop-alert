@@ -62,27 +62,36 @@ try {
   console.log(`   homepage HTTP ${home?.status()} (${Date.now() - t0}ms)`)
   await page.waitForTimeout(3000) // let challenge scripts settle
 
-  // 2) Fetch the J4U API from inside the page (real browser fetch).
-  console.log('→ fetching J4U API from page context…')
+  // 2) Fetch the J4U API from inside the page (real browser fetch), with a
+  // hard abort so a tarpitted request can't hang the job forever.
+  console.log('→ fetching J4U API from page context (25s cap)…')
   const result = await page.evaluate(async (url) => {
-    const r = await fetch(url, { headers: { Accept: 'application/json, text/plain, */*' } })
-    const text = await r.text()
-    return { status: r.status, len: text.length, head: text.slice(0, 200) }
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 25000)
+    try {
+      const r = await fetch(url, {
+        headers: { Accept: 'application/json, text/plain, */*' },
+        signal: ctrl.signal,
+      })
+      const text = await r.text()
+      let docs = -1
+      try {
+        docs = JSON.parse(text)?.primaryProducts?.response?.docs?.length ?? -1
+      } catch {}
+      return { status: r.status, len: text.length, head: text.slice(0, 200), docs }
+    } catch (e) {
+      return { error: String(e && e.message ? e.message : e) }
+    } finally {
+      clearTimeout(timer)
+    }
   }, J4U_URL)
 
-  console.log(`   J4U API HTTP ${result.status} · ${result.len} bytes (${Date.now() - t0}ms)`)
-  console.log(`   body head: ${result.head.replace(/\s+/g, ' ')}`)
-
-  // Quick parse sanity: does it look like the expected product response?
-  try {
-    const probe = await page.evaluate(async (url) => {
-      const r = await fetch(url)
-      const j = await r.json()
-      return j?.primaryProducts?.response?.docs?.length ?? -1
-    }, J4U_URL)
-    console.log(`   product docs found: ${probe}`)
-  } catch (e) {
-    console.log(`   (json parse probe failed: ${e.message})`)
+  if (result.error) {
+    console.log(`   ❌ J4U API fetch: ${result.error} (${Date.now() - t0}ms)`)
+  } else {
+    console.log(`   J4U API HTTP ${result.status} · ${result.len} bytes (${Date.now() - t0}ms)`)
+    console.log(`   product docs found: ${result.docs}`)
+    console.log(`   body head: ${result.head.replace(/\s+/g, ' ')}`)
   }
 } catch (e) {
   console.log(`❌ ${e.message} (${Date.now() - t0}ms)`)
