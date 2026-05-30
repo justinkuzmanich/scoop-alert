@@ -250,8 +250,17 @@ export function makeProxyAgent(proxyUrl) {
       })
       req.once('connect', (res, socket) => {
         if (res.statusCode !== 200) {
-          socket.destroy()
-          cb(new Error(`proxy CONNECT ${res.statusCode}`))
+          // Surface the proxy's own explanation (IPRoyal returns a reason in
+          // the status line / body — e.g. bad creds, no bandwidth, IP not
+          // whitelisted). Without this we only see a bare "407".
+          let body = ''
+          res.on('data', (c) => (body += c))
+          res.on('end', () => {
+            const detail = `${res.statusMessage || ''} ${body}`.replace(/\s+/g, ' ').trim()
+            socket.destroy()
+            cb(new Error(`proxy CONNECT ${res.statusCode}${detail ? ` — ${detail}` : ''}`))
+          })
+          res.resume()
           return
         }
         const tlsSocket = tls.connect(
