@@ -3,43 +3,66 @@
 Handoff notes for the next session.
 
 ## Current state
-- App lives in `icecream-deals/` on branch `claude/fervent-goldberg-tMDQ7`.
-- Data source: **Flipp** (`backflipp.wishabi.com`) — Safeway's regional weekly ad
-  for ZIP 94941, no key needed on a normal network. (`safeway.com` itself is
-  Imperva bot-walled.)
-- `public/data/deals.json` holds a real snapshot (2026-05-29): Häagen-Dazs
-  Gelato $5.99, no Ben & Jerry's deal.
-- Web app (React+Vite) + scraper (`scraper/flipp.js`, `run.js`) + pluggable
-  email (`notify.js`) all working; build passes.
+- Standalone `scoop-alert` repo (this repo). Web app (React+Vite) + scraper
+  (`scraper/flipp.js`, `run.js`) + pluggable email (`notify.js`) all working.
+- **Primary data source: Flipp** (`backflipp.wishabi.com`) — Safeway's regional
+  weekly ad for ZIP 94941, no key needed on a normal network. (`safeway.com`
+  itself is Imperva bot-walled — see J4U notes below.)
+- Daily refresh runs via `.github/workflows/refresh-deals.yml` (cron + manual),
+  committing `public/data/deals.json`; Resend email alerts wired in `notify.js`.
+- **J4U (Safeway "for U") member deals: built but dormant**, fails safe to Flipp.
+  See section 2 below for exactly where it stands and how to resume.
 
 ## TODO
 
-### 1. Move to its own GitHub repo
-Tooling note: this session's GitHub access was scoped to `blu-sky-pipeline`,
-so the new repo must be created by the user (or with broader access).
-Plan:
-- User creates an empty `scoop-alert` repo on GitHub.
-- Export `icecream-deals/` into it. Simplest: copy the folder out, `git init`,
-  initial commit, add remote, push. (History from this branch is optional —
-  a fresh init is cleanest since it was developed in a subfolder.)
-- Then remove `icecream-deals/` from `blu-sky-pipeline`.
+### Done since earlier handoffs
+- ✅ Moved to its own `scoop-alert` repo.
+- ✅ GitHub Actions daily cron runs `npm run scrape` + commits `deals.json`.
+- ✅ Resend wired up in `notify.js` for real alert emails.
 
-### 2. Pull personalized coupons from the Safeway "for U" app (J4U)
-User HAS a Safeway login and wants their own digital coupons (richer than the
-public weekly ad).
-- Endpoint family: `https://www.safeway.com/abs/pub/web/j4u/api/offers/...`
-  (gallery/clipped offers). Returns JSON when authenticated.
-- Blockers: requires auth + sits behind Imperva. Automating the login itself is
-  hard (bot detection).
-- Recommended approach: DON'T store the password. Have the user log in via
-  browser, grab the session token/cookie (e.g. from devtools), store it as a
-  secret (`SAFEWAY_SESSION` env/CI secret), and call the J4U API with it.
-  Token will expire periodically and need refreshing — design for that.
-- Security: never commit tokens/cookies; treat as secrets. Note this is against
-  Safeway ToS to automate — fine for personal use, but keep it personal.
-- Build as a second adapter alongside `flipp.js`; merge its offers into the
-  same deal shape so the UI/alerts work unchanged.
+### Safeway "for U" personalized member deals (J4U) — ATTEMPTED, PARKED
 
-### Also still pending (offered, not yet built)
-- GitHub Actions daily cron to run `npm run scrape` + commit deals.json.
-- Wire up Resend (or chosen provider) in `notify.js` for real alert emails.
+Goal: fold each store's personalized member/coupon pricing (richer than the
+public weekly ad) into the same deal shape as Flipp.
+
+**Status: built but dormant.** The adapter (`scraper/j4u.js` +
+`scraper/j4u-browser.js`) is wired in and *fails safe* — on any problem it logs
+a warning and returns `[]`, so the pipeline always falls back to Flipp. It is
+enabled only when the `SAFEWAY_SESSION` secret is set. The site and email
+alerts run entirely on Flipp today; J4U currently contributes nothing.
+
+**What works (verified):**
+- Residential proxy (IPRoyal, `J4U_PROXY_URL` secret) — reaches `safeway.com`
+  after completing IPRoyal identity verification (KYC). Required because GitHub
+  Actions datacenter IPs are blocked by Imperva.
+- Headless Chrome (Playwright) launches through the proxy and loads the Safeway
+  homepage (HTTP 200), clearing Imperva's JS challenge.
+- The whole CI pipeline: Chromium install, scrape, safe Flipp fallback.
+
+**The wall we stopped at:** Safeway's Angular app never fires its product-search
+XHR (`/abs/pub/xapi/pgmsearch/...`) in headless Chrome, so there's no JSON to
+intercept. Symptom in logs: `⚠️ J4U: no search response for "<brand>"`.
+- Ruled out: raw HTTP (Imperva tarpits it — 60s hang even with a cookie);
+  direct `page.goto` to the API URL (navigate-mode is tarpitted); in-page
+  `fetch` (Safeway monkey-patches `window.fetch`).
+- Leading hypothesis: **the store isn't actually "selected" in the app's eyes.**
+  J4U is per-store; pinning `storeId`/`preferredStoreId` cookies (a guess) wasn't
+  enough. The real app sets the store via a specific flow — likely a `pem_jwe`
+  (JWT-ish) cookie and/or an API call triggered by choosing a store in the UI.
+
+**To resume (in rough order):**
+1. With a real logged-in browser, pick the Mill Valley store, then dump ALL
+   safeway.com cookies + the exact requests fired on store selection (devtools
+   → Network). Replicate those cookies/calls in `j4u-browser.js` before loading
+   the search page.
+2. If cookies alone don't do it, drive the store-picker UI by clicking
+   (Playwright) instead of pre-seeding cookies.
+3. Confirm the `pgmsearch` XHR then fires and returns `primaryProducts.response.docs`.
+
+**Cheaper alternative:** run `j4u-browser.js` on a personal machine (real
+logged-in Chrome, home IP — no Imperva fight, no proxy/KYC) on demand and commit
+the resulting data. Sidesteps the entire CI bot-wall problem; semi-manual.
+
+**Notes:** `SAFEWAY_SESSION` (the logged-in Cookie header) expires and must be
+re-captured periodically. Never commit it — it's a GitHub secret. Automating
+Safeway is against their ToS; keep it personal-use only.
