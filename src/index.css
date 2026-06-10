@@ -59,6 +59,16 @@ a { color: var(--pink-deep); }
   filter: drop-shadow(0 8px 10px rgba(226, 60, 132, 0.25));
   animation: bob 3s ease-in-out infinite;
 }
+.hero .logo-cone {
+  animation: bob 4s ease-in-out infinite;
+}
+.hero .logo-cone video {
+  height: 168px;
+  width: auto;
+  filter: drop-shadow(0 14px 18px rgba(226, 60, 132, 0.3));
+  -webkit-mask-image: radial-gradient(ellipse 62% 74% at 50% 47%, #000 60%, transparent 82%);
+  mask-image: radial-gradient(ellipse 62% 74% at 50% 47%, #000 60%, transparent 82%);
+}
 @keyframes bob {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
   50% { transform: translateY(-8px) rotate(3deg); }
@@ -336,6 +346,32 @@ footer {
   color: var(--ink-soft);
   font-size: 13px;
   font-weight: 600;
+}
+
+/* ---------- Rotating cone video backdrop ---------- */
+.cone-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cone-bg video {
+  height: 98vh;
+  width: auto;
+  max-width: none;
+  opacity: 0.13;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.45));
+  /* Feather the edges so any residual key halo fades to nothing. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 58% 72% at 50% 47%, #000 52%, transparent 80%
+  );
+  mask-image: radial-gradient(
+    ellipse 58% 72% at 50% 47%, #000 52%, transparent 80%
+  );
 }
 
 /* ---------- Floating scoops backdrop ---------- */

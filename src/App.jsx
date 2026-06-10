@@ -59,6 +59,11 @@ export default function App() {
 
   return (
     <>
+      <div className="cone-bg" aria-hidden="true">
+        <video autoPlay muted loop playsInline preload="auto">
+          <source src={`${import.meta.env.BASE_URL}media/cone.webm`} type="video/webm" />
+        </video>
+      </div>
       <div className="scoops" aria-hidden="true">
         {scoops.map((s, i) => (
           <span key={i}>{s}</span>
@@ -66,7 +71,11 @@ export default function App() {
       </div>
       <div className="wrap">
       <header className="hero">
-        <div className="logo">🍦</div>
+        <div className="logo-cone">
+          <video autoPlay muted loop playsInline preload="auto">
+            <source src={`${import.meta.env.BASE_URL}media/cone.webm`} type="video/webm" />
+          </video>
+        </div>
         <h1>Scoop Alert</h1>
         <p className="tag">
           Tracking Häagen-Dazs &amp; Ben &amp; Jerry's deals at Safeway in Mill Valley
