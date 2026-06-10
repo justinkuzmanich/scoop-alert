@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url'
 import { STORES } from '../src/data/config.js'
 import { fetchSafewayDeals } from './flipp.js'
 import { fetchSafewayJ4U } from './j4u.js'
+import { fetchGooglePriceDeals } from './google-price.js'
 import { toDeals } from './match.js'
 import { notify } from './notify.js'
 
@@ -91,10 +92,20 @@ async function main() {
     console.log(`   ${rawByPostal[store.postalCode].length} flyer items.`)
   }
 
+  // Safeway shelf prices via the web index (Firecrawl). Regional, not per-store,
+  // so fetch once and fold into every store. Supplements the weekly ad — catches
+  // sales the flyer misses (e.g. the all-pints Häagen-Dazs price). On-sale only.
+  let webDeals = []
+  if (process.env.FIRECRAWL_API_KEY) {
+    console.log(`\n🌐 Fetching Safeway prices via web index…`)
+    webDeals = toDeals(await fetchGooglePriceDeals()).filter((d) => d.onSale)
+    console.log(`   ${webDeals.length} web-index deal(s).`)
+  }
+
   const storesOut = []
 
   for (const store of STORES) {
-    let deals = toDeals(rawByPostal[store.postalCode])
+    let deals = mergeDeals(toDeals(rawByPostal[store.postalCode]), webDeals)
 
     // If J4U is enabled (J4U_LOCAL for a local browser, or SAFEWAY_SESSION for
     // the headless/CI path), fold in personalized "for U" member deals for this

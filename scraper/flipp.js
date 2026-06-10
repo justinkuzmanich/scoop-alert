@@ -13,10 +13,17 @@ const FLIPP_BASE = 'https://backflipp.wishabi.com/flipp'
 
 async function flippGet(url) {
   const apiKey = process.env.FIRECRAWL_API_KEY
-  if (apiKey) return flippViaFirecrawl(url, apiKey)
-  const res = await fetch(url, { headers: { Accept: 'application/json' } })
-  if (!res.ok) throw new Error(`Flipp HTTP ${res.status} for ${url}`)
-  return res.json()
+  // Try a direct fetch first (works on a normal network, including CI). Only
+  // fall back to Firecrawl on failure, so setting FIRECRAWL_API_KEY for other
+  // adapters doesn't reroute Flipp's working path through a paid scrape.
+  try {
+    const res = await fetch(url, { headers: { Accept: 'application/json' } })
+    if (res.ok) return res.json()
+    if (!apiKey) throw new Error(`Flipp HTTP ${res.status} for ${url}`)
+  } catch (err) {
+    if (!apiKey) throw err
+  }
+  return flippViaFirecrawl(url, apiKey)
 }
 
 async function flippViaFirecrawl(url, apiKey) {
