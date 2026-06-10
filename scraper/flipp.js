@@ -51,13 +51,15 @@ function findItemsArray(json) {
   return []
 }
 
+// Flipp has used both `merchant_name` and (currently) `merchant` for the store
+// name, so accept either — a miss here silently drops the whole weekly ad.
 function currentSafewayFlyers(flyersJson) {
   const flyers = Array.isArray(flyersJson)
     ? flyersJson
     : flyersJson?.flyers || []
   const now = Date.now()
   return flyers
-    .filter((f) => /safeway/i.test(f.merchant_name || ''))
+    .filter((f) => /safeway/i.test(f.merchant_name || f.merchant || ''))
     .filter((f) => {
       const from = f.valid_from ? Date.parse(f.valid_from) : -Infinity
       const to = f.valid_to ? Date.parse(f.valid_to) : Infinity
@@ -66,15 +68,22 @@ function currentSafewayFlyers(flyersJson) {
 }
 
 function mapFlyerItem(it) {
+  // Banners/promos ("download the app" tiles, display_type 5) aren't products.
+  // Product display_types vary by flyer (1, 25, …), so only exclude known
+  // banner markers rather than allow-listing.
+  if (!it.name || it.display_type === 5 || it.ttm_url) return null
   const dealText =
     (it.sale_story && it.sale_story.trim()) ||
     [it.pre_price_text, it.post_price_text].filter(Boolean).join(' ').trim() ||
     'Weekly ad price'
+  // Current Flipp items carry `price` as a string ("3.99", "" when priceless,
+  // e.g. BOGO); older shapes used numeric `current_price`/`original_price`.
+  const price = it.current_price ?? (it.price !== '' ? it.price : null)
   return {
     id: `flyer-${it.flyer_item_id || it.id}`,
     name: it.name,
-    price: it.current_price, // number or null (e.g. BOGO deals)
-    regularPrice: it.original_price, // number or null
+    price,
+    regularPrice: it.original_price ?? null,
     dealText,
     validTo: it.valid_to || null,
     fromFlyer: true, // present in the weekly ad => it's a featured deal
@@ -99,7 +108,8 @@ export async function fetchSafewayDeals(postalCode) {
       const key = it.flyer_item_id || it.id || it.name
       if (seen.has(key)) continue
       seen.add(key)
-      raw.push(mapFlyerItem(it))
+      const mapped = mapFlyerItem(it)
+      if (mapped) raw.push(mapped)
     }
   }
   return raw
