@@ -32,6 +32,25 @@ export function profileDir(env = process.env) {
 const SEARCH_PAGE = (q) =>
   `https://www.safeway.com/shop/search-results.html?q=${encodeURIComponent(q)}`
 
+// Launch the persistent profile in the user's REAL installed Chrome when
+// possible. Imperva blocks Playwright's bundled Chromium even from a home IP
+// ("Access denied / Error 15") because it fingerprints the automation build;
+// real Chrome with the automation flags suppressed passes like a normal
+// browser. Falls back to bundled Chromium if Chrome isn't installed.
+async function launchProfile(dir, { headless }) {
+  const opts = {
+    headless,
+    viewport: null, // use the real window size
+    args: ['--start-maximized', '--disable-blink-features=AutomationControlled'],
+    ignoreDefaultArgs: ['--enable-automation'],
+  }
+  try {
+    return await chromium.launchPersistentContext(dir, { ...opts, channel: 'chrome' })
+  } catch {
+    return await chromium.launchPersistentContext(dir, opts)
+  }
+}
+
 // Block until the user presses Enter in the terminal.
 function waitForEnter(prompt) {
   return new Promise((resolve) => {
@@ -50,11 +69,7 @@ export async function loginJ4U(env = process.env) {
   const dir = profileDir(env)
   console.log(`\n🌐 Opening Safeway in a real browser…`)
   console.log(`   Profile: ${dir}`)
-  const ctx = await chromium.launchPersistentContext(dir, {
-    headless: false,
-    viewport: null, // use the real window size
-    args: ['--start-maximized'],
-  })
+  const ctx = await launchProfile(dir, { headless: false })
   try {
     const page = ctx.pages()[0] || (await ctx.newPage())
     await page.goto('https://www.safeway.com/', { waitUntil: 'domcontentloaded', timeout: 60000 })
@@ -78,11 +93,7 @@ export async function loginJ4U(env = process.env) {
 // the pgmsearch XHR, and we intercept that response.
 export async function fetchJ4USearchJsonLocal({ store, queries, env = process.env }) {
   const dir = profileDir(env)
-  const ctx = await chromium.launchPersistentContext(dir, {
-    headless: env.J4U_HEADLESS === '1',
-    viewport: null,
-    args: ['--start-maximized'],
-  })
+  const ctx = await launchProfile(dir, { headless: env.J4U_HEADLESS === '1' })
   const out = []
   try {
     const page = ctx.pages()[0] || (await ctx.newPage())
