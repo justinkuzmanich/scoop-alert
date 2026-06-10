@@ -68,32 +68,39 @@ state in `scraper/.state.json` so it only emails about *newly* on-sale items.
 
 ---
 
-## Personalized member deals (J4U) — run locally
+## Personalized member deals (J4U) — manual capture
 
-The weekly ad (Flipp) is public. Safeway's **"for U"** member/coupon pricing is
-per-account and lives behind a login + an Imperva bot-wall, so it can't run from
-CI reliably. The reliable way is to run it **on your own machine**, where there's
-no bot-wall fight and you can sign in once in a real browser.
+The weekly ad (Flipp) is public and fully automated. Safeway's **"for U"**
+member/coupon pricing is per-account and sits behind a login + an Imperva
+bot-wall. Imperva blocks *any* automated browser — even your real Chrome driven
+by a script, even from your home IP (it returns "Access denied / Error 15").
+Your **ordinary, hand-driven Chrome passes fine**, so the reliable approach is to
+let your own browser fetch the data and hand it to the importer.
 
-It's a two-step, one of which is one-time:
+> An automated path also exists (`npm run j4u:login` + `npm run scrape:local`,
+> which drive a real Chrome via CDP). Try it if you like — but Imperva currently
+> blocks it, so the manual capture below is the dependable route.
+
+**Step 1 — capture (in your normal Chrome).** Sign in to
+[safeway.com](https://www.safeway.com), set your Mill Valley store, open DevTools
+(`F12`) → **Console**, and paste the snippet from
+[`scripts/j4u-capture.js`](scripts/j4u-capture.js). Then, in the Safeway search
+box, search **Haagen-Dazs** and then **Ben & Jerry's** (each search the snippet
+catches is logged `✅ captured N`). When done, run `__j4uSave()` in the console —
+it downloads **`j4u-capture.json`**.
+
+**Step 2 — import (in your repo).**
 
 ```bash
-npm run j4u:login    # ONE TIME: opens a real browser — sign in, pick your Mill
-                     # Valley store, then press Enter. Session is saved locally.
-npm run scrape:local # fetches Flipp + your for-U deals, merges, writes deals.json
+npm run j4u:import  ~/Downloads/j4u-capture.json   # path to the downloaded file
+git add public/data/deals.json
+git commit -m "chore: add Safeway for-U member deals" && git push
 ```
 
-How it works: `j4u:login` saves a logged-in Chrome profile to `.j4u-profile/`
-(gitignored — it holds your live session, **never commit it**). `scrape:local`
-reuses that profile, drives Safeway's real search page so the app fires its own
-product query, and folds any on-sale member deals into the same `deals.json` the
-web app reads. If anything fails (expired session, etc.) it logs a warning and
-falls back to the Flipp weekly ad — it never breaks a run. If member deals stop
-showing up, your session expired: re-run `npm run j4u:login`.
-
-> Requires the browser binary once: `npx playwright install chromium`.
-> Set `J4U_HEADLESS=1` to hide the browser window once you trust the run.
-> Automating Safeway is against their ToS — keep this to personal use.
+`j4u:import` parses the captured responses, folds the on-sale member deals into
+`public/data/deals.json` alongside the weekly-ad deals (keeping the lower price),
+and the push redeploys the site. Re-capture whenever you want fresh member prices
+(takes ~30 seconds). Automating Safeway is against their ToS — personal use only.
 
 ---
 
