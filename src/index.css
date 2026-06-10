@@ -467,11 +467,7 @@ footer {
 [data-theme='dark'] .card { border-color: var(--card-border); }
 [data-theme='dark'] .card.sale {
   border-color: #8a2f4d;
-  animation: glow-pulse 2.6s ease-in-out infinite;
-}
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 8px 22px rgba(255, 77, 109, 0.25); }
-  50%      { box-shadow: 0 8px 30px rgba(255, 77, 109, 0.55); }
+  box-shadow: 0 8px 24px rgba(255, 77, 109, 0.3);
 }
 [data-theme='dark'] .meta select {
   background: var(--card);
