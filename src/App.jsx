@@ -15,6 +15,15 @@ export default function App() {
   const [error, setError] = useState(null)
   const [storeId, setStoreId] = useState(null)
   const [refreshing, setRefreshing] = useState(false)
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('scoop-theme') || 'dark'
+  )
+
+  // Apply + persist the colour theme on <html> so CSS variables can switch.
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('scoop-theme', theme)
+  }, [theme])
 
   // Re-fetches the latest published deals.json. The browser can't run the
   // scraper (no backend; Flipp is bot-walled + CORS), so "checking" means
@@ -45,10 +54,28 @@ export default function App() {
   const deals = store?.deals || []
   const saleBrands = onSaleBrands(deals)
 
+  // Decorative floating scoops behind everything (purely cosmetic).
+  const scoops = ['🍦', '🍨', '🍧', '🍒', '🍓', '🍫', '🍦', '🍨', '🥄', '🍧']
+
   return (
-    <div className="wrap">
+    <>
+      <div className="cone-bg" aria-hidden="true">
+        <video autoPlay muted loop playsInline preload="auto">
+          <source src={`${import.meta.env.BASE_URL}media/cone.webm`} type="video/webm" />
+        </video>
+      </div>
+      <div className="scoops" aria-hidden="true">
+        {scoops.map((s, i) => (
+          <span key={i}>{s}</span>
+        ))}
+      </div>
+      <div className="wrap">
       <header className="hero">
-        <div className="logo">🍦</div>
+        <div className="logo-cone">
+          <video autoPlay muted loop playsInline preload="auto">
+            <source src={`${import.meta.env.BASE_URL}media/cone.webm`} type="video/webm" />
+          </video>
+        </div>
         <h1>Scoop Alert</h1>
         <p className="tag">
           Tracking Häagen-Dazs &amp; Ben &amp; Jerry's deals at Safeway in Mill Valley
@@ -87,6 +114,14 @@ export default function App() {
               {data.isSample && <span className="pill-sample">SAMPLE DATA</span>}
               {data.checkedAt && <>Last checked {fmtDateTime(data.checkedAt)}</>}
               <button
+                className="btn btn-sm btn-ghost"
+                onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                aria-label="Toggle colour theme"
+              >
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </button>
+              <button
                 className="btn btn-sm"
                 onClick={() => refresh({ bust: true })}
                 disabled={refreshing}
@@ -118,6 +153,7 @@ export default function App() {
       <footer>
         Made with 🍨 for Marin · Prices from Safeway, not affiliated with Safeway
       </footer>
-    </div>
+      </div>
+    </>
   )
 }
