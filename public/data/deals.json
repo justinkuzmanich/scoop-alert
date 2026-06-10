@@ -1,18 +1,40 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-09T16:38:02.544Z",
+  "checkedAt": "2026-06-10T04:48:42.418Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
-      "deals": []
+      "deals": [
+        {
+          "id": "flyer-1018082442",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
+          "price": 1.99,
+          "regularPrice": 1.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-06-16T23:59:59-04:00"
+        }
+      ]
     },
     {
       "id": "strawberry",
       "name": "Safeway — Strawberry Village (Mill Valley)",
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
-      "deals": []
+      "deals": [
+        {
+          "id": "flyer-1018082442",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
+          "price": 1.99,
+          "regularPrice": 1.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-06-16T23:59:59-04:00"
+        }
+      ]
     }
   ]
 }
