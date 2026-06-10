@@ -453,11 +453,14 @@ footer {
 }
 [data-theme='dark'] body {
   background:
-    radial-gradient(700px 460px at 6% -8%, rgba(255, 95, 162, 0.5), transparent),
-    radial-gradient(680px 520px at 98% 2%, rgba(90, 180, 240, 0.42), transparent),
-    radial-gradient(720px 560px at 80% 100%, rgba(84, 200, 168, 0.36), transparent),
-    radial-gradient(640px 520px at 18% 96%, rgba(255, 201, 77, 0.3), transparent),
-    linear-gradient(180deg, #1b1132, #0d0a18 75%);
+    radial-gradient(900px 600px at 6% -8%, rgba(255, 95, 162, 0.45), transparent),
+    radial-gradient(820px 620px at 98% 4%, rgba(90, 180, 240, 0.38), transparent),
+    radial-gradient(1000px 760px at 80% 112%, rgba(84, 200, 168, 0.3), transparent),
+    radial-gradient(900px 700px at 16% 106%, rgba(255, 201, 77, 0.24), transparent),
+    linear-gradient(180deg, #1b1132, #0d0a18 80%);
+  /* Match the base rule: size to the viewport so the gradient never seams on a
+     tall page. (The `background` shorthand above resets attachment, so re-set.) */
+  background-attachment: fixed;
 }
 [data-theme='dark'] .scoops span { opacity: 0.2; }
 [data-theme='dark'] .scoops::before { opacity: 0.7; }
