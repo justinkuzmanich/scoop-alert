@@ -1,55 +1,59 @@
-// J4U via a real, VISIBLE browser on your own machine (Playwright).
+// J4U via your OWN real Chrome on your own machine.
 //
-// This is the "local" counterpart to j4u-browser.js (which runs headless in
-// CI behind a residential proxy). Running on your own desktop sidesteps the two
-// walls that blocked the CI path:
+// Background: Safeway sits behind Imperva, which blocks not just datacenter IPs
+// but any *automation-controlled* browser — Playwright launching Chrome (even
+// the real Chrome binary, even from a home IP) gets "Access denied / Error 15".
+// Your everyday Chrome works because nothing is driving it.
 //
-//   1. No Imperva fight  — your home IP isn't a datacenter IP, so there's no
-//      residential proxy / KYC needed.
-//   2. No "store not selected" problem — instead of guessing store cookies, you
-//      log in and pick the Mill Valley store ONCE in a visible browser. We use a
-//      PERSISTENT profile (a real user-data dir on disk), so that login and store
-//      selection stick across runs. The real Safeway app then fires its own
-//      pgmsearch XHR exactly as it would for a human, and we intercept it.
+// So instead of launching a browser, we launch your real Chrome as an ORDINARY
+// process (with a remote-debugging port, no automation flags) and ATTACH to it
+// over CDP. Imperva sees a normal Chrome; once it clears the Imperva challenge,
+// the clearance cookie rides in the dedicated profile for later runs.
 //
-// Two entry points:
-//   loginJ4U()              — opens the browser for the one-time setup login.
-//   fetchJ4USearchJsonLocal — reuses the saved profile to run searches silently.
+// A dedicated user-data dir (.j4u-chrome, gitignored) keeps this separate from
+// your personal Chrome profile and persists the Safeway login + store choice.
 //
-// The profile dir holds your live Safeway session — it's gitignored and must
-// never be committed. Automating Safeway is against their ToS; personal use only.
+// Entry points:
+//   loginJ4U()              — opens Chrome so you log in + pick the store once.
+//   fetchJ4USearchJsonLocal — attaches, runs the searches, intercepts the JSON.
+//
+// Automating Safeway is against their ToS; personal use only.
 
 import { chromium } from 'playwright'
+import { spawn } from 'node:child_process'
 import { createInterface } from 'node:readline'
+import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 
-// Where the persistent Chrome profile (cookies, store selection, login) lives.
+const DEBUG_PORT = 9222
+
+// Dedicated Chrome profile dir (login + store selection persist here).
 // Override with J4U_PROFILE_DIR. Gitignored — see .gitignore.
 export function profileDir(env = process.env) {
-  return env.J4U_PROFILE_DIR || join(process.cwd(), '.j4u-profile')
+  return env.J4U_PROFILE_DIR || join(process.cwd(), '.j4u-chrome')
 }
 
 const SEARCH_PAGE = (q) =>
   `https://www.safeway.com/shop/search-results.html?q=${encodeURIComponent(q)}`
 
-// Launch the persistent profile in the user's REAL installed Chrome when
-// possible. Imperva blocks Playwright's bundled Chromium even from a home IP
-// ("Access denied / Error 15") because it fingerprints the automation build;
-// real Chrome with the automation flags suppressed passes like a normal
-// browser. Falls back to bundled Chromium if Chrome isn't installed.
-async function launchProfile(dir, { headless }) {
-  const opts = {
-    headless,
-    viewport: null, // use the real window size
-    args: ['--start-maximized', '--disable-blink-features=AutomationControlled'],
-    ignoreDefaultArgs: ['--enable-automation'],
-  }
-  try {
-    return await chromium.launchPersistentContext(dir, { ...opts, channel: 'chrome' })
-  } catch {
-    return await chromium.launchPersistentContext(dir, opts)
-  }
+// Locate the installed Chrome executable across platforms. Override with
+// J4U_CHROME_PATH if Chrome lives somewhere unusual.
+function chromePath(env = process.env) {
+  if (env.J4U_CHROME_PATH && existsSync(env.J4U_CHROME_PATH)) return env.J4U_CHROME_PATH
+  const candidates =
+    process.platform === 'win32'
+      ? [
+          'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+          'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+          join(env.LOCALAPPDATA || '', 'Google\\Chrome\\Application\\chrome.exe'),
+        ]
+      : process.platform === 'darwin'
+        ? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome']
+        : ['/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium-browser']
+  return candidates.find((p) => p && existsSync(p)) || null
 }
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 // Block until the user presses Enter in the terminal.
 function waitForEnter(prompt) {
@@ -62,45 +66,87 @@ function waitForEnter(prompt) {
   })
 }
 
-// One-time setup: open a visible browser to Safeway so you can log in and pick
-// the Mill Valley store. Everything is saved into the persistent profile, so
-// later fetch runs start already-authenticated with the store selected.
-export async function loginJ4U(env = process.env) {
+// Spawn real Chrome as a normal browser with a debugging port, then attach over
+// CDP. Returns { browser, context, page, kill }. `headless` uses Chrome's own
+// headless mode (still a real Chrome, not Playwright's Chromium).
+async function openRealChrome(env = process.env, { headless = false } = {}) {
+  const exe = chromePath(env)
+  if (!exe) {
+    throw new Error(
+      'Google Chrome not found. Install Chrome, or set J4U_CHROME_PATH to chrome.exe.'
+    )
+  }
   const dir = profileDir(env)
-  console.log(`\n🌐 Opening Safeway in a real browser…`)
-  console.log(`   Profile: ${dir}`)
-  const ctx = await launchProfile(dir, { headless: false })
+  const args = [
+    `--remote-debugging-port=${DEBUG_PORT}`,
+    `--user-data-dir=${dir}`,
+    '--no-first-run',
+    '--no-default-browser-check',
+    'https://www.safeway.com/',
+  ]
+  if (headless) args.unshift('--headless=new')
+
+  const proc = spawn(exe, args, { detached: false, stdio: 'ignore' })
+  const kill = () => {
+    try {
+      proc.kill()
+    } catch {
+      /* already gone */
+    }
+  }
+
+  // Wait for the debugging endpoint, then attach.
+  let browser
+  for (let i = 0; i < 30; i++) {
+    try {
+      browser = await chromium.connectOverCDP(`http://127.0.0.1:${DEBUG_PORT}`)
+      break
+    } catch {
+      await sleep(500)
+    }
+  }
+  if (!browser) {
+    kill()
+    throw new Error('Could not attach to Chrome on the debugging port.')
+  }
+  const context = browser.contexts()[0]
+  const page = context.pages()[0] || (await context.newPage())
+  return { browser, context, page, kill }
+}
+
+// One-time setup: open Chrome so you can log in and pick the Mill Valley store.
+// The dedicated profile persists it, so later fetch runs start authenticated.
+export async function loginJ4U(env = process.env) {
+  console.log(`\n🌐 Launching your real Chrome (profile: ${profileDir(env)})…`)
+  const { page, browser, kill } = await openRealChrome(env, { headless: false })
   try {
-    const page = ctx.pages()[0] || (await ctx.newPage())
-    await page.goto('https://www.safeway.com/', { waitUntil: 'domcontentloaded', timeout: 60000 })
-    console.log('\n👉 In the browser window:')
+    await page.goto('https://www.safeway.com/', { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {})
+    console.log('\n👉 In the Chrome window that opened:')
     console.log('   1. Sign in to your Safeway account.')
     console.log('   2. Set your store to the Mill Valley store you want (Camino Alto / Strawberry).')
     console.log('   3. Make sure you can see prices on a product page.')
     await waitForEnter('\n   When done, come back here and press Enter to save the session… ')
-    console.log('✓ Session saved to the profile. You can now run: npm run scrape:local')
+    console.log('✓ Session saved. You can now run: npm run scrape:local')
   } finally {
-    await ctx.close().catch(() => {})
+    await browser.close().catch(() => {})
+    kill()
   }
 }
 
-// Fetch raw J4U search JSON for each query at one store, reusing the saved
-// profile (logged in + store selected). Returns [{ query, json }]; logs and
-// returns partial/empty on failure so the pipeline falls back to Flipp.
-//
-// `headful` (default true) shows the browser; set J4U_HEADLESS=1 to hide it once
-// you trust the run. We drive the REAL search page so Safeway's own code fires
-// the pgmsearch XHR, and we intercept that response.
+// Fetch raw J4U search JSON for each query at one store by driving your real,
+// already-logged-in Chrome. Returns [{ query, json }]; logs and returns
+// partial/empty on failure so the pipeline falls back to Flipp.
 export async function fetchJ4USearchJsonLocal({ store, queries, env = process.env }) {
-  const dir = profileDir(env)
-  const ctx = await launchProfile(dir, { headless: env.J4U_HEADLESS === '1' })
   const out = []
+  let browser, kill
   try {
-    const page = ctx.pages()[0] || (await ctx.newPage())
+    ;({ browser, kill } = await openRealChrome(env, { headless: env.J4U_HEADLESS === '1' }))
+    const context = browser.contexts()[0]
+    const page = context.pages()[0] || (await context.newPage())
 
-    // Warm up the homepage so any Imperva clearance / app bootstrap happens once.
+    // Warm up so Imperva runs its challenge and issues clearance for the session.
     await page.goto('https://www.safeway.com/', { waitUntil: 'domcontentloaded', timeout: 60000 })
-    await page.waitForTimeout(2000)
+    await page.waitForTimeout(2500)
 
     for (const query of queries) {
       try {
@@ -128,7 +174,8 @@ export async function fetchJ4USearchJsonLocal({ store, queries, env = process.en
   } catch (err) {
     console.warn(`   ⚠️  J4U local browser failed @ ${store.id}: ${err.message}`)
   } finally {
-    await ctx.close().catch(() => {})
+    if (browser) await browser.close().catch(() => {})
+    if (kill) kill()
   }
   return out
 }
