@@ -12,6 +12,7 @@
     "scrape:dry": "DRY_RUN=1 node scraper/run.js",
     "scrape:local": "node scraper/run-local.js",
     "j4u:login": "node scraper/j4u-login.js",
+    "j4u:import": "node scraper/j4u-import.js",
     "test:email": "TEST_ALERT=1 node scraper/run.js"
   },
   "dependencies": {
