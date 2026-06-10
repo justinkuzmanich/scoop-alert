@@ -22,6 +22,35 @@ redeploys. Runs in ~15s. Three price sources, all merged (lower price wins):
 Email alerts via Resend (`scraper/notify.js`, `RESEND_API_KEY` secret); diffs
 against the committed `deals.json` so it only emails newly on-sale items.
 
+### Per-brand price ceiling
+`src/data/config.js` BRANDS can set `maxPrice`. Enforced in `scraper/match.js`
+`toDeal()`: a brand deal above its cap is dropped entirely (not shown, not
+emailed). Currently **Ben & Jerry's is capped at $4.50** (their pints aren't a
+deal above that); Häagen-Dazs has no cap. One-number change to adjust.
+
+### Product images
+Deal cards show a product photo (`src/components/DealCard.jsx`):
+- Web-index items derive it from the public Albertsons Scene7 CDN
+  (`images.albertsons-media.com/is/image/ABS/<id>`), keyed by the product-details
+  id (`scraper/google-price.js`).
+- Flipp items use the flyer `cutout_image_url` (`scraper/flipp.js`).
+- `match.js` passes an `image` field through; the card lazy-loads it and an
+  `onError` handler hides the thumb if it 404s (card stays clean).
+- NOTE: the CDN is blocked by the dev sandbox's network allowlist, so images
+  can't be verified in-sandbox — they load in normal browsers (confirmed the CDN
+  returns real webp via Firecrawl).
+
+## Web app UI
+
+React+Vite, deployed to GitHub Pages (`.github/workflows/deploy.yml`). Playful
+design with a **light/dark toggle** (`src/App.jsx`, persisted in localStorage,
+defaults to dark). Dark theme adds a candy-glow background, floating emoji +
+CSS sprinkles, a shimmering title, gradient sale prices, and a **rotating
+ice-cream-cone video** in the hero (`public/media/cone.webm` — a transparent
+VP9-alpha WebM made by keying the grey out of an uploaded clip with ffmpeg).
+All decorative motion respects `prefers-reduced-motion`. The "Check deals"
+button only re-fetches the published `deals.json` (no backend — see future work).
+
 ## Personalized "for U" member deals — manual capture (by design)
 
 Truly personalized member prices are per-account and published nowhere, and the
