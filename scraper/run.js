@@ -14,7 +14,6 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { STORES } from '../src/data/config.js'
 import { fetchSafewayDeals } from './flipp.js'
-import { fetchSafewayJ4U } from './j4u.js'
 import { fetchGooglePriceDeals } from './google-price.js'
 import { toDeals } from './match.js'
 import { notify } from './notify.js'
@@ -105,18 +104,9 @@ async function main() {
   const storesOut = []
 
   for (const store of STORES) {
-    let deals = mergeDeals(toDeals(rawByPostal[store.postalCode]), webDeals)
-
-    // If J4U is enabled (J4U_LOCAL for a local browser, or SAFEWAY_SESSION for
-    // the headless/CI path), fold in personalized "for U" member deals for this
-    // store (on-sale items only, to keep the UI focused).
-    if (process.env.J4U_LOCAL === '1' || process.env.SAFEWAY_SESSION) {
-      const j4uDeals = toDeals(await fetchSafewayJ4U(store)).filter((d) => d.onSale)
-      if (j4uDeals.length) {
-        console.log(`   +${j4uDeals.length} J4U member deal(s) @ ${store.name}`)
-      }
-      deals = mergeDeals(deals, j4uDeals)
-    }
+    // Weekly ad (Flipp) + web-index shelf prices. Personalized "for U" member
+    // deals are added out-of-band by the manual capture path (npm run j4u:import).
+    const deals = mergeDeals(toDeals(rawByPostal[store.postalCode]), webDeals)
 
     const nowOnSale = deals.filter((d) => d.onSale)
     console.log(

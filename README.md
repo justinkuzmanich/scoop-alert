@@ -91,16 +91,13 @@ supplement to the weekly ad, not a replacement.
 
 ## Personalized member deals (J4U) — manual capture
 
-The weekly ad (Flipp) is public and fully automated. Safeway's **"for U"**
-member/coupon pricing is per-account and sits behind a login + an Imperva
-bot-wall. Imperva blocks *any* automated browser — even your real Chrome driven
-by a script, even from your home IP (it returns "Access denied / Error 15").
-Your **ordinary, hand-driven Chrome passes fine**, so the reliable approach is to
-let your own browser fetch the data and hand it to the importer.
-
-> An automated path also exists (`npm run j4u:login` + `npm run scrape:local`,
-> which drive a real Chrome via CDP). Try it if you like — but Imperva currently
-> blocks it, so the manual capture below is the dependable route.
+Most sales are caught automatically by the weekly ad (Flipp) and the web-index
+source above. This optional path adds your truly **personalized** "for U" prices,
+which are per-account and never published anywhere. They sit behind a login + an
+Imperva bot-wall that blocks *every* automated browser — even a real Chrome
+driven by a script, even from your home IP ("Access denied / Error 15"). Your
+**ordinary, hand-driven Chrome passes fine**, so the reliable approach is to let
+your own browser fetch the data and hand it to the importer.
 
 **Step 1 — capture (in your normal Chrome).** Sign in to
 [safeway.com](https://www.safeway.com), set your Mill Valley store, open DevTools
