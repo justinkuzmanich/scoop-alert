@@ -50,6 +50,9 @@ export const BRANDS = [
     accent: '#d7eccf',
     match: ['ben & jerry', "ben and jerry", 'ben&jerry'],
     query: "Ben & Jerry's Ice Cream",
+    // Only surface a Ben & Jerry's deal at/under this price — their pints aren't
+    // a "good deal" above it, so anything pricier is hidden (and never emailed).
+    maxPrice: 4.5,
   },
 ]
 

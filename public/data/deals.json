@@ -86,66 +86,6 @@
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null
-        },
-        {
-          "id": "web-142010024",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010148",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010283",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Vanilla Ice Cream Pint - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-960128515",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010144",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
         }
       ]
     },
@@ -230,66 +170,6 @@
           "name": "Haagen-Dazs Ice Cream Destination Series mango - 14 Fl. Oz.",
           "price": 3.99,
           "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010024",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010148",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010283",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Vanilla Ice Cream Pint - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-960128515",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null
-        },
-        {
-          "id": "web-142010144",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
-          "price": 6.99,
-          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null

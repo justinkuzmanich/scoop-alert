@@ -26,6 +26,9 @@ export function toDeal(raw, idx) {
 
   const price = parsePrice(raw.price)
   const regularPrice = parsePrice(raw.regularPrice) ?? price
+
+  // Per-brand price ceiling: above it, it's not worth showing (or alerting on).
+  if (brand.maxPrice != null && price != null && price > brand.maxPrice) return null
   const dealText = (raw.dealText || '').trim()
 
   const hasPriceDrop = price != null && regularPrice != null && regularPrice > price
