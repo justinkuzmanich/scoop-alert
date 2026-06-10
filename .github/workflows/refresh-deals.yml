@@ -63,6 +63,11 @@ jobs:
           # Residential proxy so the J4U browser exits from a trusted IP instead
           # of the (Imperva-blocked) GitHub Actions range. Unset → goes direct.
           J4U_PROXY_URL: ${{ secrets.J4U_PROXY_URL }}
+          # Safeway shelf prices via the web index (Firecrawl search). Catches
+          # sales the weekly ad misses (e.g. the all-pints Häagen-Dazs price)
+          # without touching the Imperva-walled site. Unset → that source is
+          # skipped and the weekly ad still runs. Get a free key at firecrawl.dev.
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
       - name: Commit updated deals.json if changed
         run: |
           if git diff --quiet -- public/data/deals.json; then

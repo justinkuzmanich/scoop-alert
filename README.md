@@ -68,6 +68,27 @@ state in `scraper/.state.json` so it only emails about *newly* on-sale items.
 
 ---
 
+## Safeway shelf prices via the web index (automatic)
+
+Beyond the weekly ad, Safeway's own product pages show a current "Your Price /
+Original Price" — but the site is behind Imperva + hCaptcha, so it can't be
+scraped directly. **Google has already indexed those pages with the price in the
+snippet**, though, so we read the search index instead of the site. This runs in
+the cloud cron, needs no browser, and catches sales the flyer misses (e.g. the
+region-wide "all Häagen-Dazs pints $3.99").
+
+Enable it by setting a **`FIRECRAWL_API_KEY`** secret (free tier at
+[firecrawl.dev](https://firecrawl.dev)) under **Settings → Secrets and variables
+→ Actions**. Unset → the source is simply skipped and the weekly ad still runs.
+
+Source: `scraper/google-price.js`. It searches each tracked brand's Safeway
+product pages, extracts the price from the result snippet, and folds on-sale
+items into `deals.json` (lower price wins). Caveat: snippet prices reflect
+Google's last crawl, so they can lag the live sale by a few days — it's a
+supplement to the weekly ad, not a replacement.
+
+---
+
 ## Personalized member deals (J4U) — manual capture
 
 The weekly ad (Flipp) is public and fully automated. Safeway's **"for U"**
