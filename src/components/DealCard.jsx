@@ -6,6 +6,19 @@ export default function DealCard({ deal }) {
   return (
     <div className={`card ${onSale ? 'sale' : ''}`}>
       {onSale && <span className="badge-sale">ON SALE</span>}
+      {deal.image && (
+        <div className="thumb">
+          <img
+            src={deal.image}
+            alt={deal.name}
+            loading="lazy"
+            // If the image 404s, hide it so the card falls back cleanly.
+            onError={(e) => {
+              e.currentTarget.parentElement.style.display = 'none'
+            }}
+          />
+        </div>
+      )}
       <div className="name">{deal.name}</div>
       <div className="price-row">
         <span className="price">{fmtPrice(deal.price)}</span>

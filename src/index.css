@@ -218,6 +218,23 @@ a { color: var(--pink-deep); }
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.thumb img {
+  max-height: 118px;
+  max-width: 92%;
+  object-fit: contain;
+}
+[data-theme='dark'] .thumb { background: #f4eefc; }
+
 .card .name {
   font-weight: 800;
   font-size: 15.5px;
