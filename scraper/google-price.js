@@ -68,7 +68,13 @@ export async function fetchGooglePriceDeals(env = process.env) {
   const raw = []
   const seen = new Set()
   for (const brand of BRANDS) {
-    const query = `${brand.query || brand.name} site:safeway.com/shop/product-details`
+    // Quote the on-page price labels so Google returns the PRICE snippet, not the
+    // marketing blurb. A bare `site:` query returns the product description
+    // ("Making magic with Madagascar vanilla…") and no price; forcing
+    // "Your Price"/"Original Price" surfaces "Your Price $3.99 Original $6.99".
+    // We filter to safeway.com product pages below (sister chains like vons /
+    // tomthumb / starmarket show different regional prices and are dropped).
+    const query = `${brand.query || brand.name} Safeway "Your Price" "Original Price"`
     let results
     try {
       results = await firecrawlSearch(query, apiKey)
