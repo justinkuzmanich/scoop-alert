@@ -39,10 +39,10 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      # The J4U (Safeway "for U") adapter drives a real headless browser to get
-      # past Imperva, so Chromium must be present. Harmless if J4U is disabled.
-      - name: Install Chromium for Playwright
-        run: npx playwright install --with-deps chromium
+      # No browser needed: both CI sources are plain HTTP (Flipp weekly ad +
+      # Firecrawl web-index search). The Imperva-walled J4U headless path was
+      # removed — it never got past the bot-wall and only slowed the run. Member
+      # deals now come from the manual capture path (scripts/j4u-capture.js).
       - name: Scrape latest deals
         run: npm run scrape
         env:
@@ -55,14 +55,6 @@ jobs:
           # When the manual "test_email" toggle is on, send one sample alert
           # (no scrape, deals.json untouched) to verify Resend delivery.
           TEST_ALERT: ${{ inputs.test_email && '1' || '' }}
-          # Optional: Safeway "for U" personalized deals. When SAFEWAY_SESSION
-          # (the logged-in Cookie header) is set, the scraper drives a headless
-          # browser to fold in member + coupon prices; absent/expired/blocked,
-          # it silently falls back to Flipp.
-          SAFEWAY_SESSION: ${{ secrets.SAFEWAY_SESSION }}
-          # Residential proxy so the J4U browser exits from a trusted IP instead
-          # of the (Imperva-blocked) GitHub Actions range. Unset → goes direct.
-          J4U_PROXY_URL: ${{ secrets.J4U_PROXY_URL }}
           # Safeway shelf prices via the web index (Firecrawl search). Catches
           # sales the weekly ad misses (e.g. the all-pints Häagen-Dazs price)
           # without touching the Imperva-walled site. Unset → that source is
