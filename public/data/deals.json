@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-10T06:09:32.429Z",
+  "checkedAt": "2026-06-10T16:57:59.836Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -15,7 +15,8 @@
           "regularPrice": 1.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-06-16T23:59:59-04:00"
+          "validTo": "2026-06-16T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/422793742/1780501281/extra_large.jpg"
         },
         {
           "id": "web-142010463",
@@ -109,7 +110,8 @@
           "regularPrice": 1.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-06-16T23:59:59-04:00"
+          "validTo": "2026-06-16T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/422793742/1780501281/extra_large.jpg"
         },
         {
           "id": "web-142010463",
