@@ -86,6 +86,8 @@ function mapFlyerItem(it) {
   // Current Flipp items carry `price` as a string ("3.99", "" when priceless,
   // e.g. BOGO); older shapes used numeric `current_price`/`original_price`.
   const price = it.current_price ?? (it.price !== '' ? it.price : null)
+  // Flipp ships a product cutout image (http → force https for the page).
+  const image = (it.cutout_image_url || it.image_url || '').replace(/^http:/, 'https:') || null
   return {
     id: `flyer-${it.flyer_item_id || it.id}`,
     name: it.name,
@@ -93,6 +95,7 @@ function mapFlyerItem(it) {
     regularPrice: it.original_price ?? null,
     dealText,
     validTo: it.valid_to || null,
+    image,
     fromFlyer: true, // present in the weekly ad => it's a featured deal
   }
 }

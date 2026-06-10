@@ -47,6 +47,7 @@ export function toDeal(raw, idx) {
     onSale,
     dealText,
     validTo: raw.validTo || null,
+    image: raw.image || null,
   }
 }
 

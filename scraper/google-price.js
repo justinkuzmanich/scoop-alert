@@ -92,13 +92,20 @@ export async function fetchGooglePriceDeals(env = process.env) {
       const key = name.toLowerCase()
       if (seen.has(key)) continue
       seen.add(key)
+      // Safeway/Albertsons serve the product photo from a public Scene7 CDN keyed
+      // by the same id that's in the product-details URL — no bot-wall.
+      const pid = url.match(/product-details\.(\d+)/)?.[1]
+      const image = pid
+        ? `https://images.albertsons-media.com/is/image/ABS/${pid}?fit=constrain,1&qlt=80&wid=240&hei=240`
+        : null
       raw.push({
-        id: `web-${url.match(/product-details\.(\d+)/)?.[1] || key.replace(/\s+/g, '-')}`,
+        id: `web-${pid || key.replace(/\s+/g, '-')}`,
         name,
         price: prices.price,
         regularPrice: prices.regularPrice,
         dealText: 'Safeway price (web index)',
         validTo: null,
+        image,
       })
     }
   }

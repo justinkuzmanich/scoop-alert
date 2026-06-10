@@ -25,7 +25,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -35,7 +36,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010647",
@@ -45,7 +47,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010304",
@@ -55,7 +58,8 @@
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010353",
@@ -65,7 +69,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960027489",
@@ -75,7 +80,8 @@
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960160164",
@@ -85,7 +91,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     },
@@ -112,7 +119,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -122,7 +130,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010647",
@@ -132,7 +141,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010304",
@@ -142,7 +152,8 @@
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010353",
@@ -152,7 +163,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960027489",
@@ -162,7 +174,8 @@
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960160164",
@@ -172,7 +185,8 @@
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
-          "validTo": null
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     }
