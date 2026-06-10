@@ -272,11 +272,6 @@ a { color: var(--pink-deep); }
   box-shadow: 0 6px 14px rgba(255, 77, 109, 0.4);
   transform: rotate(6deg);
   transform-origin: center;
-  animation: wiggle 2.4s ease-in-out infinite;
-}
-@keyframes wiggle {
-  0%, 100% { transform: rotate(6deg) scale(1); }
-  50%      { transform: rotate(-6deg) scale(1.08); }
 }
 .empty {
   color: var(--ink-soft);
