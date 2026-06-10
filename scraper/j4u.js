@@ -1,31 +1,16 @@
-// Data source: Safeway "for U" / J4U personalized product search.
+// Parser for Safeway "for U" / J4U personalized product-search responses.
 //
-// Unlike Flipp (the public weekly ad), this is Safeway's own authenticated
-// product API, which returns PER-STORE, PER-ACCOUNT pricing — including the
-// lower "Club Card" / member price that normally only shows after you log in.
+// This is Safeway's own authenticated product API, which returns PER-ACCOUNT
+// pricing — including the lower "Club Card" / member price. The response carries
+// products under `primaryProducts.response.docs[]`, each with `basePrice`
+// (regular), `price` (member price already applied), `promoDescription`, and
+// `promoEndDate` — exactly our deal shape.
 //
-//   GET https://www.safeway.com/abs/pub/xapi/pgmsearch/v1/search/products
-//       ?q=<brand>&storeid=<locId>&includeOffer=true&banner=safeway&...
-//
-// The response carries products under `primaryProducts.response.docs[]`, each
-// with `basePrice` (regular), `price` (member price already applied),
-// `promoDescription`, and `promoEndDate` — exactly our deal shape.
-//
-// IMPORTANT — this endpoint sits behind login + an Imperva bot-wall:
-//   * It needs your browser session, supplied via the SAFEWAY_SESSION env var
-//     (the full Cookie header copied from a logged-in request).
-//   * Imperva tarpits raw-HTTP requests to this API even through a residential
-//     proxy, so the fetch is driven through a real headless browser (Playwright)
-//     in scraper/j4u-browser.js — see fetchSafewayJ4U below. In CI, set
-//     J4U_PROXY_URL to a residential proxy so the browser exits from a trusted
-//     IP; unset → goes direct (works locally / from a home IP).
-//   * Sessions expire; on any auth/expiry/bot-wall failure this adapter logs
-//     and returns [], so the pipeline cleanly falls back to Flipp.
-//
-// Nothing secret is stored in the repo — the session and proxy URL both live
-// in GitHub secrets.
-
-import { BRANDS } from '../src/data/config.js'
+// We can't fetch this endpoint automatically: it sits behind a login + an
+// Imperva/hCaptcha bot-wall that blocks every automated browser, even a real
+// one from a home IP. So the data is captured by hand in your own logged-in
+// browser (scripts/j4u-capture.js) and fed to scraper/j4u-import.js, which uses
+// the parser below. See the README "Personalized member deals" section.
 
 // ---------------------------------------------------------------------------
 // Coupon tier (the "$4.48 each" clippable offer — an extra discount BELOW the
@@ -188,72 +173,3 @@ export function parseJ4USearch(json) {
   return docs.map((d) => mapJ4UDoc(d, offersByUpc)).filter(Boolean)
 }
 
-// Accept either a URL form (http://user:pass@host:port) or IPRoyal's
-// "Copy list" form (host:port:user:pass) — the latter lets you paste the
-// credential verbatim with no hand-editing, avoiding l/I/O/0 transcription
-// bugs. Returns { hostname, port, username, password }.
-export function parseProxy(raw) {
-  const s = String(raw).trim()
-  if (/^https?:\/\//i.test(s)) {
-    const u = new URL(s)
-    return {
-      hostname: u.hostname,
-      port: u.port || '80',
-      username: decodeURIComponent(u.username),
-      password: decodeURIComponent(u.password),
-    }
-  }
-  // host:port:user:pass — split into at most 4 parts so a ':' inside the
-  // password (rare, but possible) stays intact.
-  const m = s.match(/^([^:]+):([^:]+):([^:]+):(.+)$/)
-  if (!m) throw new Error('J4U_PROXY_URL: unrecognized proxy format')
-  return { hostname: m[1], port: m[2], username: m[3], password: m[4] }
-}
-
-// Public: fetch personalized deals for one store. Returns raw products (same
-// shape as flipp.js). Requires SAFEWAY_SESSION; returns [] (never throws) on
-// any auth/expiry/bot-wall failure so the caller can fall back to Flipp.
-//
-// Imperva tarpits raw-HTTP requests to the J4U API even through a residential
-// proxy, so we drive the real web app in a headless browser and intercept the
-// pgmsearch XHR it fires. The browser is dynamically imported so environments
-// without Playwright (and runs without SAFEWAY_SESSION) pay no cost.
-export async function fetchSafewayJ4U(store, env = process.env) {
-  // Two ways to enable J4U:
-  //   * J4U_LOCAL=1     — run a real browser on your own machine using a saved,
-  //                       logged-in profile (see j4u-browser-local.js). No cookie
-  //                       or proxy needed; this is the recommended local path.
-  //   * SAFEWAY_SESSION — headless/CI path: drive a headless browser with a
-  //                       copied session cookie (and a residential proxy in CI).
-  // Disabled (returns []) unless one is set, so the pipeline falls back to Flipp.
-  const local = env.J4U_LOCAL === '1'
-  if (!local && !env.SAFEWAY_SESSION) return []
-
-  const queries = BRANDS.map((b) => b.query || b.name)
-
-  let results
-  try {
-    if (local) {
-      const { fetchJ4USearchJsonLocal } = await import('./j4u-browser-local.js')
-      results = await fetchJ4USearchJsonLocal({ store, queries, env })
-    } else {
-      const { fetchJ4USearchJson } = await import('./j4u-browser.js')
-      results = await fetchJ4USearchJson({ store, queries, env })
-    }
-  } catch (err) {
-    console.warn(`   ⚠️  J4U browser unavailable @ ${store.id}: ${err.message}`)
-    return []
-  }
-
-  const seen = new Set()
-  const raw = []
-  for (const { json } of results) {
-    for (const p of parseJ4USearch(json)) {
-      const key = p.id || p.name
-      if (seen.has(key)) continue
-      seen.add(key)
-      raw.push(p)
-    }
-  }
-  return raw
-}

@@ -4,6 +4,6 @@ dist
 .env.local
 *.log
 
-# Local J4U browser profile — holds a live, logged-in Safeway session. Never commit.
-.j4u-profile/
-.j4u-chrome/
+# Manual J4U capture file downloaded from your browser (may hold session-derived
+# data). Never commit — import it with `npm run j4u:import`, then it can be deleted.
+j4u-capture.json
