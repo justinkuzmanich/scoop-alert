@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-11T17:36:11.213Z",
+  "checkedAt": "2026-06-12T16:43:47.394Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -21,7 +21,7 @@
         {
           "id": "web-142010353",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Oz",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
@@ -30,26 +30,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160164",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series mango - 14 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010463",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Oz",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960027489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 6.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -63,21 +63,10 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010304",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 7.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010647",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Dulce de Leche Ice Cream - 14 Oz",
-          "price": 3.99,
+          "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
@@ -85,15 +74,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960027489",
+          "id": "web-960160164",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 7.99,
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     },
@@ -116,7 +116,7 @@
         {
           "id": "web-142010353",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Oz",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
@@ -125,26 +125,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160164",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series mango - 14 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010463",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Oz",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960027489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 6.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -158,21 +158,10 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010304",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 7.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010647",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Dulce de Leche Ice Cream - 14 Oz",
-          "price": 3.99,
+          "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
@@ -180,15 +169,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960027489",
+          "id": "web-960160164",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 7.99,
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     }
