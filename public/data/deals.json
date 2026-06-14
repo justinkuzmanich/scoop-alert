@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-13T15:42:15.257Z",
+  "checkedAt": "2026-06-14T15:48:29.858Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -44,12 +44,23 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 6.99,
-          "regularPrice": 7.99,
+          "price": 8.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960160164",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -74,15 +85,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160164",
+          "id": "web-142011038",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960127052",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Chocolate Chip Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960127052?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010301",
@@ -139,12 +161,23 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 6.99,
-          "regularPrice": 7.99,
+          "price": 8.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960160164",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142200243",
@@ -169,15 +202,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160164",
+          "id": "web-142011038",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960127052",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Chocolate Chip Ice Cream - 14 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960127052?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010301",
