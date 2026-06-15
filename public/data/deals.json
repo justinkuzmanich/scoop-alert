@@ -1,23 +1,12 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-14T15:48:29.858Z",
+  "checkedAt": "2026-06-15T18:24:51.118Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
-        {
-          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
-          "price": 2.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "$2.99 each when you buy 2 or more · in-store",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
         {
           "id": "flyer-1018082442",
           "brandId": "haagen-dazs",
@@ -52,15 +41,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010301",
+          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
+          "price": 2.99,
+          "regularPrice": 6.99,
           "onSale": true,
-          "dealText": "Safeway price (web index)",
+          "dealText": "$2.99 each when you buy 2 or more · in-store",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     },
@@ -70,17 +59,6 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
-          "price": 2.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "$2.99 each when you buy 2 or more · in-store",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "flyer-1018082442",
           "brandId": "haagen-dazs",
           "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
@@ -114,15 +92,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010301",
+          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
+          "price": 2.99,
+          "regularPrice": 6.99,
           "onSale": true,
-          "dealText": "Safeway price (web index)",
+          "dealText": "$2.99 each when you buy 2 or more · in-store",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         }
       ]
     }
