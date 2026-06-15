@@ -29,6 +29,15 @@ export function toDeal(raw, idx) {
 
   // Per-brand price ceiling: above it, it's not worth showing (or alerting on).
   if (brand.maxPrice != null && price != null && price > brand.maxPrice) return null
+  // Scoped caps (e.g. standard 14 oz Häagen-Dazs pints over $4.50). A cap applies
+  // to a product unless `except` matches its name (a different size/format).
+  if (brand.caps && price != null) {
+    for (const cap of brand.caps) {
+      const exempt = cap.except && cap.except.test(raw.name || '')
+      const applies = cap.sizeMatch ? cap.sizeMatch.test(raw.name || '') : !exempt
+      if (applies && price > cap.maxPrice) return null
+    }
+  }
   const dealText = (raw.dealText || '').trim()
 
   const hasPriceDrop = price != null && regularPrice != null && regularPrice > price
