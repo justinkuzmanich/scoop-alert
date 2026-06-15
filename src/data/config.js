@@ -41,13 +41,13 @@ export const BRANDS = [
     accent: '#f3d9c6',
     match: ['haagen-dazs', 'haagen dazs', 'häagen-dazs', 'häagen dazs'],
     query: 'Haagen-Dazs Ice Cream',
-    // A standard (14 oz) Häagen-Dazs pint over $4.50 isn't a good deal — hide it.
-    // `except` exempts the clearly different formats (28/64 oz tubs, 3.6 oz cups,
-    // bars, sandwiches), which aren't 14 oz pints. (See `caps` in match.js.)
+    // Häagen-Dazs over $4.50 isn't a good deal — hide it. `except` exempts only
+    // the larger tubs (28/64 oz) and small single cups, which aren't comparable
+    // to a pint/snack-bars pack. (See `caps` handling in match.js.)
     caps: [
       {
         maxPrice: 4.5,
-        except: /\b(28|64|3\.6)\s*(fl\.?\s*)?oz\b|bars?\b|\bcup\b|sandwich/i,
+        except: /\b(28|64)\s*(fl\.?\s*)?oz\b|\b3\.6\s*(fl\.?\s*)?oz\b|\bcup\b/i,
       },
     ],
   },

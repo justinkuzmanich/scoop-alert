@@ -41,17 +41,6 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142011038",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
@@ -112,17 +101,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142011038",
