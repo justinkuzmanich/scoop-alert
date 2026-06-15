@@ -1,0 +1,15 @@
+{
+  "_comment": "Manually-curated deals you spot in-store that the automated sources (Flipp weekly ad + web index) miss — e.g. 'buy 2+' member promos. These are merged into every run (lower price wins) so they persist across scrapes. Remove an entry when the deal ends, or set 'expires' (ISO date) to auto-drop it. 'stores' is optional (omit/null = all stores).",
+  "deals": [
+    {
+      "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
+      "brandId": "haagen-dazs",
+      "price": 2.99,
+      "regularPrice": 6.99,
+      "dealText": "$2.99 each when you buy 2 or more · in-store",
+      "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240",
+      "validTo": null,
+      "expires": null
+    }
+  ]
+}

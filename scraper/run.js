@@ -36,6 +36,28 @@ function mergeDeals(...lists) {
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const DEALS_OUT = join(ROOT, 'public', 'data', 'deals.json')
+const MANUAL_IN = join(ROOT, 'scraper', 'manual-deals.json')
+
+// Convert a hand-curated manual-deals.json entry into a deal object. These are
+// always shown (onSale) and bypass the per-brand maxPrice cap — they're
+// explicitly curated, e.g. in-store "buy 2+" promos the public sources miss.
+function manualToDeal(m) {
+  const slug = (m.name || m.brandId || 'deal')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+  return {
+    id: m.id || `manual-${slug}`,
+    brandId: m.brandId,
+    name: m.name,
+    price: m.price ?? null,
+    regularPrice: m.regularPrice ?? m.price ?? null,
+    onSale: true,
+    dealText: m.dealText || 'In-store deal',
+    validTo: m.validTo || null,
+    image: m.image || null,
+  }
+}
 
 async function readJson(path, fallback) {
   try {
@@ -101,12 +123,27 @@ async function main() {
     console.log(`   ${webDeals.length} web-index deal(s).`)
   }
 
+  // Hand-curated deals (scraper/manual-deals.json) — in-store/member promos the
+  // automated sources miss. Always overlaid; expired entries are dropped.
+  const now = Date.now()
+  const activeManual = ((await readJson(MANUAL_IN, { deals: [] })).deals || []).filter(
+    (m) => m && m.brandId && (!m.expires || Date.parse(m.expires) >= now)
+  )
+  if (activeManual.length) console.log(`\n📝 ${activeManual.length} manual deal(s) overlaid.`)
+
   const storesOut = []
 
   for (const store of STORES) {
-    // Weekly ad (Flipp) + web-index shelf prices. Personalized "for U" member
-    // deals are added out-of-band by the manual capture path (npm run j4u:import).
-    const deals = mergeDeals(toDeals(rawByPostal[store.postalCode]), webDeals)
+    // Weekly ad (Flipp) + web-index shelf prices + manual overlay (lower price
+    // wins). Personalized "for U" member deals come from npm run j4u:import.
+    const manualForStore = activeManual
+      .filter((m) => !m.stores || m.stores.includes(store.id))
+      .map(manualToDeal)
+    const deals = mergeDeals(
+      toDeals(rawByPostal[store.postalCode]),
+      webDeals,
+      manualForStore
+    )
 
     const nowOnSale = deals.filter((d) => d.onSale)
     console.log(
