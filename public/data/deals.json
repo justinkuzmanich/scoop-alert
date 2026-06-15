@@ -8,6 +8,17 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
+          "price": 2.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "$2.99 each when you buy 2 or more · in-store",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "flyer-1018082442",
           "brandId": "haagen-dazs",
           "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
@@ -124,6 +135,17 @@
       "name": "Safeway — Strawberry Village (Mill Valley)",
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14 oz — buy 2+",
+          "price": 2.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "$2.99 each when you buy 2 or more · in-store",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
         {
           "id": "flyer-1018082442",
           "brandId": "haagen-dazs",
