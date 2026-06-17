@@ -2,6 +2,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Also deploy after the daily scrape commits new deals.json. The scrape pushes
+  # with the built-in GITHUB_TOKEN, and GitHub deliberately does NOT let such
+  # pushes trigger other workflows (recursion guard) — so without this the site
+  # would only redeploy on a manual/human push and go stale between scrapes.
+  workflow_run:
+    workflows: ["Refresh deals (daily)"]
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: read
