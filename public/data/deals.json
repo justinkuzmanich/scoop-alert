@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-16T18:26:53.311Z",
+  "checkedAt": "2026-06-17T16:54:18.194Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,37 +8,15 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1018082442",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
-          "price": 1.99,
-          "regularPrice": 1.99,
+          "id": "flyer-1019392240",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-pk. Popsicle Ice Pops 9 to 18-ct.",
+          "price": 2.99,
+          "regularPrice": 2.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-06-16T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/422793742/1780501281/extra_large.jpg"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010352",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Chocolate Ice Cream - 14 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010352?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "validTo": "2026-06-23T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
         },
         {
           "id": "web-960091628",
@@ -70,37 +48,15 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1018082442",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
-          "price": 1.99,
-          "regularPrice": 1.99,
+          "id": "flyer-1019392240",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-pk. Popsicle Ice Pops 9 to 18-ct.",
+          "price": 2.99,
+          "regularPrice": 2.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-06-16T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/422793742/1780501281/extra_large.jpg"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010352",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Chocolate Ice Cream - 14 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010352?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "validTo": "2026-06-23T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
         },
         {
           "id": "web-960091628",
