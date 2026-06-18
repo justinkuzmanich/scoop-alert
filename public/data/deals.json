@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-17T16:54:18.194Z",
+  "checkedAt": "2026-06-18T16:55:58.059Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,15 +19,26 @@
           "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
         },
         {
-          "id": "web-960091628",
+          "id": "web-142010301",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 4.99,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960057088",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -59,15 +70,26 @@
           "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
         },
         {
-          "id": "web-960091628",
+          "id": "web-142010301",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 4.99,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960057088",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
