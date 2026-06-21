@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-20T15:45:16.418Z",
+  "checkedAt": "2026-06-21T15:50:01.291Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -28,6 +28,17 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960091628",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -68,6 +79,17 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960091628",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
