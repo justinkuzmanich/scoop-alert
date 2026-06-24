@@ -1,23 +1,12 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-23T16:26:31.497Z",
+  "checkedAt": "2026-06-24T16:21:01.636Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
-        {
-          "id": "flyer-1019392240",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-pk. Popsicle Ice Pops 9 to 18-ct.",
-          "price": 2.99,
-          "regularPrice": 2.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-06-23T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
-        },
         {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
@@ -28,17 +17,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960091628",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -59,17 +37,6 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1019392240",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-pk. Popsicle Ice Pops 9 to 18-ct.",
-          "price": 2.99,
-          "regularPrice": 2.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-06-23T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/423544642/1781065752/extra_large.jpg"
-        },
-        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
@@ -79,17 +46,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960091628",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
