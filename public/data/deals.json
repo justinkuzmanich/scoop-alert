@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-27T15:14:35.696Z",
+  "checkedAt": "2026-06-28T15:17:05.324Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,15 +19,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "id": "web-142010022",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
           "price": 1.5,
           "regularPrice": 2.19,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960128515",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
+          "price": 1.5,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960128515?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-970671859",
@@ -70,15 +81,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "id": "web-142010022",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
           "price": 1.5,
           "regularPrice": 2.19,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960128515",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
+          "price": 1.5,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960128515?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-970671859",
