@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-28T15:17:05.324Z",
+  "checkedAt": "2026-06-29T16:55:41.053Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -17,17 +17,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960128515",
@@ -79,17 +68,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960128515",
