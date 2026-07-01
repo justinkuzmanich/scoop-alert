@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-06-30T16:22:33.840Z",
+  "checkedAt": "2026-07-01T16:26:20.889Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,37 +8,26 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "flyer-1022537558",
+          "brandId": "haagen-dazs",
+          "name": "Dreyer's 1.5-qt. Häagen-Dazs Novelties 3-ct. Ice Cream 14-oz.",
+          "price": 2.99,
+          "regularPrice": 2.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-07-07T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/425267095/1782284424/extra_large.jpg"
+        },
+        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960128515",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960128515?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970671859",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Impretzively Fudged Ice Cream - Pint",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970671859?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -59,37 +48,26 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "flyer-1022537558",
+          "brandId": "haagen-dazs",
+          "name": "Dreyer's 1.5-qt. Häagen-Dazs Novelties 3-ct. Ice Cream 14-oz.",
+          "price": 2.99,
+          "regularPrice": 2.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-07-07T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/425267095/1782284424/extra_large.jpg"
+        },
+        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960128515",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Ice Cream - 16 Oz",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960128515?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970671859",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Impretzively Fudged Ice Cream - Pint",
-          "price": 1.5,
-          "regularPrice": 2.19,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970671859?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
