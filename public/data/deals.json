@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-01T16:26:20.889Z",
+  "checkedAt": "2026-07-02T16:05:05.177Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -22,12 +22,56 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200243",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars ...",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010136",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Mint Chocolate Cookie Ice Cream - 16 Oz",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010136?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -62,12 +106,56 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200243",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars ...",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
           "price": 5.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 8.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010136",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Mint Chocolate Cookie Ice Cream - 16 Oz",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010136?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
