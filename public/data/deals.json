@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-04T15:04:10.575Z",
+  "checkedAt": "2026-07-05T15:12:00.184Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,26 +19,15 @@
           "image": "https://f.wishabi.net/page_items/425267095/1782284424/extra_large.jpg"
         },
         {
-          "id": "web-142010301",
+          "id": "web-142010708",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 5.99,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Chocolate Peanut Butter Ice Cream - 14 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010708?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -70,26 +59,15 @@
           "image": "https://f.wishabi.net/page_items/425267095/1782284424/extra_large.jpg"
         },
         {
-          "id": "web-142010301",
+          "id": "web-142010708",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 5.99,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Chocolate Peanut Butter Ice Cream - 14 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010708?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
