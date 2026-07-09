@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-08T16:01:31.463Z",
+  "checkedAt": "2026-07-09T16:27:04.134Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -22,34 +22,34 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010675",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Phish Food Ice Cream Pint - 16 Oz",
-          "price": 4.49,
-          "regularPrice": 5.99,
+          "id": "web-142011047",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010675?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010136",
+          "id": "web-970011327",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Mint Chocolate Cookie Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Chocolate Peanut Butter Split Ice Cream - 16 Oz",
           "price": 4.49,
           "regularPrice": 5.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010136?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/970011327?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -84,34 +84,34 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 8.99,
-          "regularPrice": 10.99,
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010675",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Phish Food Ice Cream Pint - 16 Oz",
-          "price": 4.49,
-          "regularPrice": 5.99,
+          "id": "web-142011047",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010675?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010136",
+          "id": "web-970011327",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Mint Chocolate Cookie Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Chocolate Peanut Butter Split Ice Cream - 16 Oz",
           "price": 4.49,
           "regularPrice": 5.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010136?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/970011327?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
