@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-10T16:23:37.226Z",
+  "checkedAt": "2026-07-11T14:52:11.209Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -17,39 +17,6 @@
           "dealText": "Weekly ad price",
           "validTo": "2026-07-14T23:59:59-04:00",
           "image": "https://f.wishabi.net/page_items/426166677/1782894585/extra_large.jpg"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011047",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970011327",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Peanut Butter Split Ice Cream - 16 Oz",
-          "price": 4.49,
-          "regularPrice": 5.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970011327?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -79,39 +46,6 @@
           "dealText": "Weekly ad price",
           "validTo": "2026-07-14T23:59:59-04:00",
           "image": "https://f.wishabi.net/page_items/426166677/1782894585/extra_large.jpg"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011047",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970011327",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Peanut Butter Split Ice Cream - 16 Oz",
-          "price": 4.49,
-          "regularPrice": 5.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970011327?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
