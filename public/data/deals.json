@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-12T14:55:04.817Z",
+  "checkedAt": "2026-07-13T16:31:53.121Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -22,8 +22,8 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 10.99,
-          "regularPrice": 12.99,
+          "price": 7.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
@@ -39,17 +39,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010148",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
-          "price": 4.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -84,8 +73,8 @@
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 10.99,
-          "regularPrice": 12.99,
+          "price": 7.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
@@ -101,17 +90,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010148",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
-          "price": 4.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
