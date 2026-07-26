@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-25T15:01:17.783Z",
+  "checkedAt": "2026-07-26T15:03:47.271Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,37 +19,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream ...",
-          "price": 4.5,
-          "regularPrice": 6.99,
+          "id": "web-971322701",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Dough 10.1 Fz",
+          "price": 3.5,
+          "regularPrice": 4.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960057088",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960027490",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322701?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -81,37 +59,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream ...",
-          "price": 4.5,
-          "regularPrice": 6.99,
+          "id": "web-971322701",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Dough 10.1 Fz",
+          "price": 3.5,
+          "regularPrice": 4.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960057088",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960027490",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322701?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
