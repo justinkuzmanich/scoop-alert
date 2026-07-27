@@ -1,12 +1,23 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-26T15:03:47.271Z",
+  "checkedAt": "2026-07-27T16:17:12.004Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "web-142010353",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
+          "price": 4.49,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
         {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
@@ -19,15 +30,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971322701",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Cookie Dough 10.1 Fz",
-          "price": 3.5,
-          "regularPrice": 4.99,
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971322701?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960027490",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010148",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960037246",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Milk and Cookies Ice Cream - 16 Oz",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960037246?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -48,6 +92,17 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "web-142010353",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
+          "price": 4.49,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
@@ -59,15 +114,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971322701",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Cookie Dough 10.1 Fz",
-          "price": 3.5,
-          "regularPrice": 4.99,
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971322701?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960027490",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010148",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960037246",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Milk and Cookies Ice Cream - 16 Oz",
+          "price": 4.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960037246?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
