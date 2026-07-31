@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-07-30T15:51:32.180Z",
+  "checkedAt": "2026-07-31T16:00:56.133Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -30,15 +30,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010024",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
-          "price": 3,
-          "regularPrice": 5.49,
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011042",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Coffee - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011042?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970692489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream - 14 Fl. Oz.",
+          "price": 3.99,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -81,15 +114,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010024",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
-          "price": 3,
-          "regularPrice": 5.49,
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011042",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Coffee - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011042?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010301",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970692489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream - 14 Fl. Oz.",
+          "price": 3.99,
+          "regularPrice": 5.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
