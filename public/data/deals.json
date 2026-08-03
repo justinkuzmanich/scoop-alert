@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-02T15:00:33.503Z",
+  "checkedAt": "2026-08-03T16:23:49.008Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,26 +19,26 @@
           "image": "https://f.wishabi.net/page_items/428221212/1784699050/extra_large.jpg"
         },
         {
-          "id": "web-970692489",
+          "id": "web-960027489",
           "brandId": "haagen-dazs",
-          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream - 14 Fl. Oz.",
-          "price": 3.99,
-          "regularPrice": 5.99,
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-970039197",
+          "id": "web-960318904",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Dublin Mudslide Ice Cream - 16 Oz",
-          "price": 1,
-          "regularPrice": 1.99,
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
+          "price": 4.5,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970039197?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960318904?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -70,26 +70,26 @@
           "image": "https://f.wishabi.net/page_items/428221212/1784699050/extra_large.jpg"
         },
         {
-          "id": "web-970692489",
+          "id": "web-960027489",
           "brandId": "haagen-dazs",
-          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream - 14 Fl. Oz.",
-          "price": 3.99,
-          "regularPrice": 5.99,
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-970039197",
+          "id": "web-960318904",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Dublin Mudslide Ice Cream - 16 Oz",
-          "price": 1,
-          "regularPrice": 1.99,
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
+          "price": 4.5,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970039197?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960318904?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
