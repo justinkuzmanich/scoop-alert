@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-04T16:10:12.626Z",
+  "checkedAt": "2026-08-05T16:00:39.265Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,37 +8,15 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1028471504",
+          "id": "web-142010463",
           "brandId": "haagen-dazs",
-          "name": "Dreyer's 1.5-qt. Selected varieties. Novelties 3-ct. Häagen-Dazs Ice Cream 14-oz.",
-          "price": 2.99,
-          "regularPrice": 2.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-08-04T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/428221212/1784699050/extra_large.jpg"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960318904",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
-          "price": 4.5,
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960318904?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -59,37 +37,15 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1028471504",
+          "id": "web-142010463",
           "brandId": "haagen-dazs",
-          "name": "Dreyer's 1.5-qt. Selected varieties. Novelties 3-ct. Häagen-Dazs Ice Cream 14-oz.",
-          "price": 2.99,
-          "regularPrice": 2.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-08-04T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/428221212/1784699050/extra_large.jpg"
-        },
-        {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960318904",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
-          "price": 4.5,
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960318904?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
