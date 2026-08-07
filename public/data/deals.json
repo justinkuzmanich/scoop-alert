@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-05T16:00:39.265Z",
+  "checkedAt": "2026-08-07T14:51:04.170Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,15 +8,37 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "web-142010463",
+          "id": "web-142010351",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 14 Fl. Oz.",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010351?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960160161",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Destination Series Belgian Chocolate Ice Cream",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -37,15 +59,37 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "web-142010463",
+          "id": "web-142010351",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 14 Fl. Oz.",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010351?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011038",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.19,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960160161",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Destination Series Belgian Chocolate Ice Cream",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
