@@ -1,12 +1,45 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-09T14:14:00.803Z",
+  "checkedAt": "2026-08-10T14:27:09.132Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "web-960027489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200243",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars ...",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010463",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
         {
           "id": "web-960160161",
           "brandId": "haagen-dazs",
@@ -19,15 +52,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010354",
+          "id": "web-960160164",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 14 Fl. Oz.",
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010354?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970692489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011047",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010873",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cinnamon Buns Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 4.79,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010873?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -48,6 +114,39 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "web-960027489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200243",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars ...",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010463",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-960160161",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Destination Series Belgian Chocolate Ice ...",
@@ -59,15 +158,48 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010354",
+          "id": "web-960160164",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 14 Fl. Oz.",
+          "name": "Haagen-Dazs Ice Cream Destination Series Creamy Mango Ice ...",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010354?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960160164?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970692489",
+          "brandId": "haagen-dazs",
+          "name": "Haagen Dazs New York Strawberry Cheesecake Ice Cream",
+          "price": 3.5,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970692489?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011047",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010873",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cinnamon Buns Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 4.79,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010873?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
