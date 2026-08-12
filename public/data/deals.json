@@ -1,12 +1,23 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-11T14:27:14.036Z",
+  "checkedAt": "2026-08-12T14:27:23.294Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "flyer-1031195343",
+          "brandId": "ben-jerrys",
+          "name": "Signature SELECT® Ice Cream 1.5-qt. Talenti Gelato Pint. Ben & Jerry's Ice Cream Pint Ice Cream Bars 4-pk.",
+          "price": 3.99,
+          "regularPrice": 3.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-08-18T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
+        },
         {
           "id": "web-142010353",
           "brandId": "haagen-dazs",
@@ -30,37 +41,37 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160161",
+          "id": "web-142200243",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series Belgian Chocolate Ice Cream",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars Ice ...",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960021516",
+          "id": "web-142010304",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Match Green Tea Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960021516?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010356",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate Chocolate Chip Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "id": "web-142010282",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010356?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -81,6 +92,17 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
+          "id": "flyer-1031195343",
+          "brandId": "ben-jerrys",
+          "name": "Signature SELECT® Ice Cream 1.5-qt. Talenti Gelato Pint. Ben & Jerry's Ice Cream Pint Ice Cream Bars 4-pk.",
+          "price": 3.99,
+          "regularPrice": 3.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-08-18T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
+        },
+        {
           "id": "web-142010353",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
@@ -103,37 +125,37 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960160161",
+          "id": "web-142200243",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Destination Series Belgian Chocolate Ice Cream",
+          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars Ice ...",
           "price": 3.5,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960160161?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960021516",
+          "id": "web-142010304",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Match Green Tea Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960021516?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010356",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate Chocolate Chip Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "id": "web-142010282",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010356?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
