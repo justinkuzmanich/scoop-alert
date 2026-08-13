@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-12T14:27:23.294Z",
+  "checkedAt": "2026-08-13T14:28:37.480Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,37 +19,15 @@
           "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
         },
         {
-          "id": "web-142010353",
+          "id": "web-960027489",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010463",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars Ice ...",
-          "price": 3.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010304",
@@ -63,6 +41,28 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
+          "id": "web-142010598",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010024",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 8.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-142010282",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
@@ -72,6 +72,17 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971322702",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Strawberry Cheesecake 10.1 Fz",
+          "price": 3.99,
+          "regularPrice": 8.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322702?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -103,37 +114,15 @@
           "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
         },
         {
-          "id": "web-142010353",
+          "id": "web-960027489",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Strawberry Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
+          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010353?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010463",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
-          "price": 3.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142200243",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Milk Chocolate Almond Ice Cream Snack Bars Ice ...",
-          "price": 3.5,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142200243?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010304",
@@ -147,6 +136,28 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
+          "id": "web-142010598",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
+          "price": 1.89,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010024",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 8.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-142010282",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
@@ -156,6 +167,17 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971322702",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Strawberry Cheesecake 10.1 Fz",
+          "price": 3.99,
+          "regularPrice": 8.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322702?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
