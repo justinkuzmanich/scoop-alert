@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-14T14:23:24.601Z",
+  "checkedAt": "2026-08-15T14:05:48.846Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -30,59 +30,136 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010304",
+          "id": "web-142011047",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010598",
+          "id": "web-960027490",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.49,
+          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011042",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Coffee - 3.6 Fl. Oz.",
+          "price": 3,
+          "regularPrice": 5.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011042?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960018918",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Limited Batch Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960018918?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010024",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
           "price": 3.99,
-          "regularPrice": 8.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010282",
+          "id": "web-142010022",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971322702",
+          "id": "web-142010148",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Strawberry Cheesecake 10.1 Fz",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
           "price": 3.99,
-          "regularPrice": 8.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971322702?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011314",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010144",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010144?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010675",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Phish Food Ice Cream Pint - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010675?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010876",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint Americone Dream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010876?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971193974",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -125,59 +202,136 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010304",
+          "id": "web-142011047",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
+          "price": 5.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010598",
+          "id": "web-960027490",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
-          "price": 1.89,
-          "regularPrice": 2.49,
+          "name": "Haagen-Dazs Strawberry Ice Cream - 28 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960027490?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011042",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Coffee - 3.6 Fl. Oz.",
+          "price": 3,
+          "regularPrice": 5.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011042?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960018918",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Limited Batch Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960018918?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010024",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Half Baked Ice Cream Pint - 16 Oz",
           "price": 3.99,
-          "regularPrice": 8.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010282",
+          "id": "web-142010022",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Vanilla Caramel Fudge Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010282?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971322702",
+          "id": "web-142010148",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Strawberry Cheesecake 10.1 Fz",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
           "price": 3.99,
-          "regularPrice": 8.99,
+          "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971322702?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011314",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010144",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010144?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010675",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Phish Food Ice Cream Pint - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010675?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010876",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint Americone Dream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010876?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971193974",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
