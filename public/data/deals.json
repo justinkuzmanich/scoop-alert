@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-18T14:12:55.546Z",
+  "checkedAt": "2026-08-19T14:13:09.180Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,15 +8,15 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1031195343",
-          "brandId": "ben-jerrys",
-          "name": "Signature SELECT® Ice Cream 1.5-qt. Talenti Gelato Pint. Ben & Jerry's Ice Cream Pint Ice Cream Bars 4-pk.",
-          "price": 3.99,
-          "regularPrice": 3.99,
+          "id": "flyer-1033161134",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
+          "price": 3.49,
+          "regularPrice": 3.49,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-08-18T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
+          "validTo": "2026-08-25T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
         },
         {
           "id": "web-960027489",
@@ -28,17 +28,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010301",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010024",
@@ -65,7 +54,7 @@
         {
           "id": "web-142010148",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
@@ -85,6 +74,28 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010404?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
+          "id": "web-971193974",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970010630",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Gimme Smore Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-142011314",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
@@ -96,15 +107,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971193974",
+          "id": "web-960161444",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "name": "Ben & Jerry's Brownie Batter Core Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960161444?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960322866",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Caramel Chocolate Cheesecake Ice Cream",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960322866?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -125,15 +147,15 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1031195343",
-          "brandId": "ben-jerrys",
-          "name": "Signature SELECT® Ice Cream 1.5-qt. Talenti Gelato Pint. Ben & Jerry's Ice Cream Pint Ice Cream Bars 4-pk.",
-          "price": 3.99,
-          "regularPrice": 3.99,
+          "id": "flyer-1033161134",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
+          "price": 3.49,
+          "regularPrice": 3.49,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-08-18T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/429604868/1785885061/extra_large.jpg"
+          "validTo": "2026-08-25T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
         },
         {
           "id": "web-960027489",
@@ -145,17 +167,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010301",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142010024",
@@ -182,7 +193,7 @@
         {
           "id": "web-142010148",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
@@ -202,6 +213,28 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010404?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
+          "id": "web-971193974",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970010630",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Gimme Smore Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-142011314",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
@@ -213,15 +246,26 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-971193974",
+          "id": "web-960161444",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Cookie Vermontster - 14.4FZ",
+          "name": "Ben & Jerry's Brownie Batter Core Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/971193974?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960161444?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-960322866",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Caramel Chocolate Cheesecake Ice Cream",
+          "price": 3.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/960322866?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
