@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-19T14:13:09.180Z",
+  "checkedAt": "2026-08-20T14:15:02.038Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -41,17 +41,6 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010148",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
@@ -61,17 +50,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010404",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Pistachio Ice Cream Pint - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010404?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-971193974",
@@ -96,37 +74,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011314",
+          "id": "web-142010149",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Peanut Butter Cup Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960161444",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Brownie Batter Core Ice Cream - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960161444?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960322866",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Caramel Chocolate Cheesecake Ice Cream",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960322866?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010149?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -180,17 +136,6 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010024?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010022",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Everything But The - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010022?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-142010148",
           "brandId": "ben-jerrys",
           "name": "Ben & Jerry's Chocolate Chip Cookie Dough Ice Cream",
@@ -200,17 +145,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142010148?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010404",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Pistachio Ice Cream Pint - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010404?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-971193974",
@@ -235,37 +169,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011314",
+          "id": "web-142010149",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Peanut Butter Cup Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960161444",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Brownie Batter Core Ice Cream - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960161444?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960322866",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Caramel Chocolate Cheesecake Ice Cream",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960322866?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010149?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
