@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-24T14:16:27.129Z",
+  "checkedAt": "2026-08-25T14:17:24.319Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,6 +19,17 @@
           "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
         },
         {
+          "id": "web-142010463",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 1.67,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
@@ -30,26 +41,59 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010463",
+          "id": "web-960021516",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
-          "price": 3.99,
-          "regularPrice": 7.49,
+          "name": "Haagen-Dazs Ice Cream Match Green Tea Ice Cream",
+          "price": 3.5,
+          "regularPrice": 5.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960021516?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960091628",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200067",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Dark Chocolate Ice Cream Snack Bars Ice ...",
+          "price": 3.99,
+          "regularPrice": 7.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200067?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010144",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010144?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -81,6 +125,17 @@
           "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
         },
         {
+          "id": "web-142010463",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
+          "price": 1.67,
+          "regularPrice": 2.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
           "id": "web-960027489",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
@@ -92,26 +147,59 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010463",
+          "id": "web-960021516",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Bean Ice Cream - 14 Fl. Oz.",
-          "price": 3.99,
-          "regularPrice": 7.49,
+          "name": "Haagen-Dazs Ice Cream Match Green Tea Ice Cream",
+          "price": 3.5,
+          "regularPrice": 5.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010463?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960021516?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-960091628",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
-          "price": 5.99,
-          "regularPrice": 6.99,
+          "price": 9.99,
+          "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 9.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142200067",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Dark Chocolate Ice Cream Snack Bars Ice ...",
+          "price": 3.99,
+          "regularPrice": 7.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142200067?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010144",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Cherry Garcia Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 7.49,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010144?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
