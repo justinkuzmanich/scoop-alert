@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-25T14:17:24.319Z",
+  "checkedAt": "2026-08-26T14:16:55.285Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,15 +8,15 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1033161134",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
-          "price": 3.49,
-          "regularPrice": 3.49,
+          "id": "flyer-1035385254",
+          "brandId": "ben-jerrys",
+          "name": "Tillamook Ice Cream 1.5-qt. Ice Cream Bars 4-pack. Ben & Jerry's Ice Cream Pint. Popsicle Ice Pops 9 to 18 ct",
+          "price": null,
+          "regularPrice": null,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-08-25T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
+          "validTo": "2026-09-01T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
         },
         {
           "id": "web-142010463",
@@ -114,15 +114,15 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1033161134",
-          "brandId": "haagen-dazs",
-          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct.",
-          "price": 3.49,
-          "regularPrice": 3.49,
+          "id": "flyer-1035385254",
+          "brandId": "ben-jerrys",
+          "name": "Tillamook Ice Cream 1.5-qt. Ice Cream Bars 4-pack. Ben & Jerry's Ice Cream Pint. Popsicle Ice Pops 9 to 18 ct",
+          "price": null,
+          "regularPrice": null,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-08-25T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/430632511/1786670677/extra_large.jpg"
+          "validTo": "2026-09-01T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
         },
         {
           "id": "web-142010463",
