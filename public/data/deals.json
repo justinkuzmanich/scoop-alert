@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-29T14:08:59.922Z",
+  "checkedAt": "2026-08-30T14:09:22.088Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -41,48 +41,59 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960091628",
+          "id": "web-142010301",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
           "price": 9.99,
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-970010630",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Gimme Smore Ice Cream - 16 Oz",
+          "id": "web-960057088",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
           "price": 3.99,
-          "regularPrice": 7.49,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010598",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
+          "price": 6.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011314",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-970064357",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert",
+          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/970064357?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960274656",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Pint Salted Caramel Almond - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960274656?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -136,48 +147,59 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-960091628",
+          "id": "web-142010301",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Dulce De Leche - 28 Fl. Oz.",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
           "price": 9.99,
           "regularPrice": 10.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960091628?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-970010630",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Gimme Smore Ice Cream - 16 Oz",
+          "id": "web-960057088",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
           "price": 3.99,
-          "regularPrice": 7.49,
+          "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970010630?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142010598",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
+          "price": 6.99,
+          "regularPrice": 7.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-142011314",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-970064357",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert",
+          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert - 16 Oz",
           "price": 3.99,
           "regularPrice": 7.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/970064357?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-960274656",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Ice Cream Pint Salted Caramel Almond - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960274656?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
