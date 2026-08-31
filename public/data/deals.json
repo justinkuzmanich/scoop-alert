@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-08-30T14:09:22.088Z",
+  "checkedAt": "2026-08-31T14:12:51.740Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -19,39 +19,6 @@
           "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
         },
         {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010304",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010301",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-960057088",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
@@ -63,15 +30,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010598",
+          "id": "web-142011038",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
-          "price": 6.99,
-          "regularPrice": 7.99,
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.67,
+          "regularPrice": 2.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142011314",
@@ -83,17 +50,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970064357",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970064357?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -125,39 +81,6 @@
           "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
         },
         {
-          "id": "web-960027489",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Chocolate - 28 Fl. Oz.",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960027489?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010304",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142010301",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 28 Oz",
-          "price": 9.99,
-          "regularPrice": 10.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010301?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
           "id": "web-960057088",
           "brandId": "haagen-dazs",
           "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
@@ -169,15 +92,15 @@
           "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142010598",
+          "id": "web-142011038",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Dulce De Leche Cup - 3.6 Fl. Oz.",
-          "price": 6.99,
-          "regularPrice": 7.99,
+          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "price": 1.67,
+          "regularPrice": 2.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142010598?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "web-142011314",
@@ -189,17 +112,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970064357",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's The Tonight Dough Non-Dairy Frozen Dessert - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 7.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970064357?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
