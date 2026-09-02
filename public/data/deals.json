@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-09-01T14:12:00.507Z",
+  "checkedAt": "2026-09-02T14:11:08.676Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -8,48 +8,59 @@
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1035385254",
-          "brandId": "ben-jerrys",
-          "name": "Tillamook Ice Cream 1.5-qt. Ice Cream Bars 4-pack. Ben & Jerry's Ice Cream Pint. Popsicle Ice Pops 9 to 18 ct",
-          "price": null,
-          "regularPrice": null,
+          "id": "flyer-1036949809",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct. Dreyer's 1.5-qt.",
+          "price": 2.99,
+          "regularPrice": 2.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-09-01T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
+          "validTo": "2026-09-08T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/432388017/1787885284/extra_large.jpg"
         },
         {
-          "id": "web-960057088",
+          "id": "web-142011047",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
           "price": 1.67,
           "regularPrice": 2.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011314",
+          "id": "web-970012229",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Peanut Butter Half Baked Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/970012229?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970125250",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Dirt Cake Topped Ice Cream - 15.2 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970125250?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971322647",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Strawberry Shortcake 14.4 Fz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -70,48 +81,59 @@
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
         {
-          "id": "flyer-1035385254",
-          "brandId": "ben-jerrys",
-          "name": "Tillamook Ice Cream 1.5-qt. Ice Cream Bars 4-pack. Ben & Jerry's Ice Cream Pint. Popsicle Ice Pops 9 to 18 ct",
-          "price": null,
-          "regularPrice": null,
+          "id": "flyer-1036949809",
+          "brandId": "haagen-dazs",
+          "name": "Häagen-Dazs Ice Cream 14-oz. Novelties 3-ct. Dreyer's 1.5-qt.",
+          "price": 2.99,
+          "regularPrice": 2.99,
           "onSale": true,
           "dealText": "Weekly ad price",
-          "validTo": "2026-09-01T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/431710979/1787257853/extra_large.jpg"
+          "validTo": "2026-09-08T23:59:59-04:00",
+          "image": "https://f.wishabi.net/page_items/432388017/1787885284/extra_large.jpg"
         },
         {
-          "id": "web-960057088",
+          "id": "web-142011047",
           "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Vanilla Ice Cream - 64 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/960057088?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
+          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
           "price": 1.67,
           "regularPrice": 2.49,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
-          "id": "web-142011314",
+          "id": "web-970012229",
           "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Strawberry Cheesecake Ice Cream - 16 Oz",
+          "name": "Ben & Jerry's Peanut Butter Half Baked Ice Cream - 16 Oz",
           "price": 3.99,
           "regularPrice": 6.99,
           "onSale": true,
           "dealText": "Safeway price (web index)",
           "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011314?fit=constrain,1&qlt=80&wid=240&hei=240"
+          "image": "https://images.albertsons-media.com/is/image/ABS/970012229?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-970125250",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Dirt Cake Topped Ice Cream - 15.2 Oz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/970125250?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
+        {
+          "id": "web-971322647",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Strawberry Shortcake 14.4 Fz",
+          "price": 3.99,
+          "regularPrice": 6.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/971322647?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
