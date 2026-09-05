@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-09-04T14:10:16.665Z",
+  "checkedAt": "2026-09-05T14:08:49.867Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -28,28 +28,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
-          "price": 1.67,
-          "regularPrice": 2.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970012229",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Peanut Butter Half Baked Ice Cream - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970012229?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -90,28 +68,6 @@
           "dealText": "Safeway price (web index)",
           "validTo": null,
           "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-142011038",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Chocolate - 3.6 Fl. Oz.",
-          "price": 1.67,
-          "regularPrice": 2.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011038?fit=constrain,1&qlt=80&wid=240&hei=240"
-        },
-        {
-          "id": "web-970012229",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry's Peanut Butter Half Baked Ice Cream - 16 Oz",
-          "price": 3.99,
-          "regularPrice": 6.99,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/970012229?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
