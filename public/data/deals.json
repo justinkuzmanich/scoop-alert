@@ -1,6 +1,6 @@
 {
   "isSample": false,
-  "checkedAt": "2026-09-05T14:08:49.867Z",
+  "checkedAt": "2026-09-06T14:08:57.454Z",
   "stores": [
     {
       "id": "camino-alto",
@@ -17,17 +17,6 @@
           "dealText": "Weekly ad price",
           "validTo": "2026-09-08T23:59:59-04:00",
           "image": "https://f.wishabi.net/page_items/432388017/1787885284/extra_large.jpg"
-        },
-        {
-          "id": "web-142011047",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
-          "price": 1.67,
-          "regularPrice": 2.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
@@ -57,17 +46,6 @@
           "dealText": "Weekly ad price",
           "validTo": "2026-09-08T23:59:59-04:00",
           "image": "https://f.wishabi.net/page_items/432388017/1787885284/extra_large.jpg"
-        },
-        {
-          "id": "web-142011047",
-          "brandId": "haagen-dazs",
-          "name": "Haagen-Dazs Ice Cream Cup Vanilla - 3.6 Fl. Oz.",
-          "price": 1.67,
-          "regularPrice": 2.49,
-          "onSale": true,
-          "dealText": "Safeway price (web index)",
-          "validTo": null,
-          "image": "https://images.albertsons-media.com/is/image/ABS/142011047?fit=constrain,1&qlt=80&wid=240&hei=240"
         },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
