@@ -1,12 +1,23 @@
 {
   "isSample": false,
-  "checkedAt": "2026-09-09T14:10:49.296Z",
+  "checkedAt": "2026-09-10T14:10:09.676Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 7.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
@@ -25,6 +36,17 @@
       "name": "Safeway — Strawberry Village (Mill Valley)",
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "web-142010304",
+          "brandId": "haagen-dazs",
+          "name": "Haagen-Dazs Coffee Ice Cream - 28 Oz",
+          "price": 7.99,
+          "regularPrice": 10.99,
+          "onSale": true,
+          "dealText": "Safeway price (web index)",
+          "validTo": null,
+          "image": "https://images.albertsons-media.com/is/image/ABS/142010304?fit=constrain,1&qlt=80&wid=240&hei=240"
+        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
