@@ -1,23 +1,12 @@
 {
   "isSample": false,
-  "checkedAt": "2026-10-20T14:11:03.590Z",
+  "checkedAt": "2026-10-21T14:12:01.659Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
-        {
-          "id": "flyer-1046083997",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry Ice Cream Bars 4-pack. Ice Cream",
-          "price": 3.99,
-          "regularPrice": 3.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-10-20T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/436670236/1791324671/extra_large.jpg"
-        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
@@ -36,17 +25,6 @@
       "name": "Safeway — Strawberry Village (Mill Valley)",
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
-        {
-          "id": "flyer-1046083997",
-          "brandId": "ben-jerrys",
-          "name": "Ben & Jerry Ice Cream Bars 4-pack. Ice Cream",
-          "price": 3.99,
-          "regularPrice": 3.99,
-          "onSale": true,
-          "dealText": "Weekly ad price",
-          "validTo": "2026-10-20T23:59:59-04:00",
-          "image": "https://f.wishabi.net/page_items/436670236/1791324671/extra_large.jpg"
-        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
