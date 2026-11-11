@@ -1,12 +1,23 @@
 {
   "isSample": false,
-  "checkedAt": "2026-11-10T14:07:25.339Z",
+  "checkedAt": "2026-11-11T14:07:19.845Z",
   "stores": [
     {
       "id": "camino-alto",
       "name": "Safeway — Camino Alto (Mill Valley)",
       "address": "1 Camino Alto, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "flyer-1052200354",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-ct. Yasso Novelties 4-ct. Signature SELECT® Ice Cream 1.5 qt.",
+          "price": 3.99,
+          "regularPrice": 3.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-11-17T23:59:59-05:00",
+          "image": "https://f.wishabi.net/page_items/439587769/1793758075/extra_large.jpg"
+        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
@@ -25,6 +36,17 @@
       "name": "Safeway — Strawberry Village (Mill Valley)",
       "address": "800 Redwood Hwy Frontage Rd #110, Mill Valley, CA 94941",
       "deals": [
+        {
+          "id": "flyer-1052200354",
+          "brandId": "ben-jerrys",
+          "name": "Ben & Jerry's Ice Cream Pint. Ice Cream Bars 4-ct. Yasso Novelties 4-ct. Signature SELECT® Ice Cream 1.5 qt.",
+          "price": 3.99,
+          "regularPrice": 3.99,
+          "onSale": true,
+          "dealText": "Weekly ad price",
+          "validTo": "2026-11-17T23:59:59-05:00",
+          "image": "https://f.wishabi.net/page_items/439587769/1793758075/extra_large.jpg"
+        },
         {
           "id": "manual-h-agen-dazs-ice-cream-14-oz-buy-2",
           "brandId": "haagen-dazs",
