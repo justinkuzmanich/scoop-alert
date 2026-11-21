@@ -89,6 +89,33 @@ supplement to the weekly ad, not a replacement.
 
 ---
 
+## Research public offers (optional)
+
+Use Node.js 22+ and run these commands from the repository root:
+
+```bash
+npm ci
+npm run research:deals
+npm run research:deals -- "Safeway Haagen-Dazs buy 2 offer 94941"
+```
+
+This read-only helper uses [Parallel Search MCP](https://docs.parallel.ai/integrations/mcp/search-mcp)
+to find public offer pages, with free search powered by Fast mode and no account
+or API key. It searches the brands and primary store ZIP in `src/data/config.js`,
+or uses your custom query. JSON output includes source URLs, excerpts and any
+search warnings. It makes a single search after connecting, times out after 30
+seconds, and exits nonzero on service errors (including free-tier limits).
+Press Ctrl+C to cancel. Run `npm run test:research` for the offline checks.
+
+Treat results as **research leads**: indexed pages can be stale or refer to a
+different store, size or membership offer. Verify the price, store, dates and
+purchase conditions before curating an entry in `scraper/manual-deals.json`.
+Personalized J4U offers still require the manual capture below. The helper only
+prints JSON; it does not update `deals.json`, send alerts, scrape Safeway directly
+or change the scheduled Flipp/Firecrawl sources.
+
+---
+
 ## Personalized member deals (J4U) — manual capture
 
 Most sales are caught automatically by the weekly ad (Flipp) and the web-index
